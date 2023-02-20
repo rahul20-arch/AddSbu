@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-20T09:39:15Z" name="Default suite" finished-at="2023-02-20T09:41:02Z" duration-ms="106604">
+  <suite started-at="2023-02-20T11:45:30Z" name="Default suite" finished-at="2023-02-20T11:46:49Z" duration-ms="79249">
     <groups>
     </groups>
-    <test started-at="2023-02-20T09:39:15Z" name="Default test" finished-at="2023-02-20T09:41:02Z" duration-ms="106604">
+    <test started-at="2023-02-20T11:45:30Z" name="Default test" finished-at="2023-02-20T11:46:49Z" duration-ms="79249">
       <class name="com.invicta.qa.testcases.sbu.MethodCalling">
-        <test-method is-config="true" signature="main()[pri:0, instance:com.invicta.qa.testcases.sbu.MethodCalling@64a4dd8d]" started-at="2023-02-20T09:39:10Z" name="main" finished-at="2023-02-20T09:39:15Z" duration-ms="5296" status="PASS">
+        <test-method is-config="true" signature="main()[pri:0, instance:com.invicta.qa.testcases.sbu.MethodCalling@64a4dd8d]" started-at="2023-02-20T11:45:24Z" name="main" finished-at="2023-02-20T11:45:30Z" duration-ms="5661" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->
-        <test-method signature="FirstTestCase()[pri:0, instance:com.invicta.qa.testcases.sbu.MethodCalling@64a4dd8d]" started-at="2023-02-20T09:39:15Z" name="FirstTestCase" finished-at="2023-02-20T09:41:02Z" duration-ms="106565" status="PASS">
+        <test-method signature="FirstTestCase()[pri:0, instance:com.invicta.qa.testcases.sbu.MethodCalling@64a4dd8d]" started-at="2023-02-20T11:45:30Z" name="FirstTestCase" finished-at="2023-02-20T11:46:49Z" duration-ms="79224" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FirstTestCase -->
-        <test-method is-config="true" signature="closeChrome()[pri:0, instance:com.invicta.qa.testcases.sbu.MethodCalling@64a4dd8d]" started-at="2023-02-20T09:41:02Z" name="closeChrome" finished-at="2023-02-20T09:41:02Z" duration-ms="349" status="PASS">
+        <test-method is-config="true" signature="closeChrome()[pri:0, instance:com.invicta.qa.testcases.sbu.MethodCalling@64a4dd8d]" started-at="2023-02-20T11:46:49Z" name="closeChrome" finished-at="2023-02-20T11:46:50Z" duration-ms="364" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeChrome -->
