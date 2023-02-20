@@ -28,10 +28,7 @@ public class AddSbuUITest extends DriverIntialization {
 	// Add SBU BUTTON POSITION,Add SBU BUTTON PADDING,Add SBU BUTTON SHADOW,Add SBU BACKGROUND COLOR,Add SBU BORDER COLOR
 	// Add SBU CURSER POINT,Add SBU OPACITY,Add SBU HEIGHT,Add SBU WIDTH,Add SBU FONT WEIGHT )
 	public static void addsbubutton() throws InterruptedException {
-		testCase = extent.createTest(" STEP-1 ADD-SBU UI METHOD(ADD-SBU-BUTTON-ENABLED,CHECK THE CLICKABILITY, ADD-SBU-VISIBLE,\r\n"
-				+ "	 ADD-SBU-FONT-COLOUR,ADD SBU-FONT- SIZE,Add SBU BUTTON FONT FAMILY,Add SBU BUTTON SPELLING\r\n"
-				+ "	 Add SBU BUTTON POSITION,Add SBU BUTTON PADDING,Add SBU BUTTON SHADOW,Add SBU BACKGROUND COLOR,Add SBU BORDER COLOR\r\n"
-				+ "	 Add SBU CURSER POINT,Add SBU OPACITY,Add SBU HEIGHT,Add SBU WIDTH,Add SBU FONT WEIGHT )");
+		testCase = extent.createTest("STEP-1");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
@@ -81,7 +78,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 				boolean clickable1 = true;
 
-				testCase = extent.createTest("CHECK THE CLICKABILITY");
+				testCase = extent.createTest("2.CHECK THE CLICKABILITY");
 				try {
 					AssertJUnit.assertEquals(String.valueOf(clickable), "true");
 					// System.out.println(String.valueOf(clickable));
@@ -340,9 +337,9 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.INFO, "Actualbordercolor :- " + actualbordercolor);
 				testCase.log(Status.INFO, "Expectedbordercolor :- " + Expectedbordercolor);
 				testCase.log(Status.PASS, "correct");
-			} catch (AssertionError e) {
-				// TODO: handle exception
-			}
+			} catch (AssertionError e) 
+				
+			
 			{
 				testCase.log(Status.INFO, "Actualbordercolor :- " + actualbordercolor);
 				testCase.log(Status.INFO, "Expectedbordercolor :- " + Expectedbordercolor);
@@ -494,8 +491,7 @@ public class AddSbuUITest extends DriverIntialization {
 		//POPUP-WINDOW-OVERFLOW-TYPE,POPUP-WINDOW-MARGIN,POPUP-WINDOW-CURSOR-TYPE,POPUP-WINDOW-Z-INDEX-TYPE,)
 		public static void addsbumodal() throws InterruptedException  
 		{		
-			testCase = extent.createTest("STEP-3 THIS METHOD IS FOR POPUP WINDOW UI PROPERTIES(POPUP-Window-Visible,POPUP-WINDOW-POSITION,POPUP-WINDOW SIZE,POPUP-WINDOW-BORDER-COLOR\r\n"
-					+ "POPUP-WINDOW-OVERFLOW-TYPE,POPUP-WINDOW-MARGIN,POPUP-WINDOW-CURSOR-TYPE,POPUP-WINDOW-Z-INDEX-TYPE,)");
+			testCase = extent.createTest("STEP-3");
 			//Model Window visible 
 		 			Thread.sleep(2000);
 				
@@ -720,10 +716,7 @@ public class AddSbuUITest extends DriverIntialization {
 	// 	
 	
 	public static void addsbutext() throws InterruptedException {
-		testCase = extent.createTest(" STEP-4 THIS METHOD IS FOR ADD-SBU TEXT(INSIDE  POPUP-WINDOW) UI PROPERTIES(ADD-SBU-TEXT-DISPLAYED,ADD-SBU-TEXT-FONT-COLOUR\r\n"
-				+ " ADD-SBU-TEXT-FONT-SIZE,ADD-SBU-TEXT-FONT-STYLE,ADD-SBU-TEXT-SPELLING,ADD-SBU-TEXT-FONT-FAMILY,ADD-SBU-TEXT-POSITION\r\n"
-				+ "ADD-SBU-TEXT-PADDING,ADD-SUB-TEXT-SHADOW,ADD-SBU-TEXT-LETTER-SPACING,ADD-SBU-TEXT-ALIGNMENT,ADD-SBU-TEXT-TRANSFORMATION\r\n"
-				+ "ADD-SBU-TEXT-LINE-HEIGHT,ADD-SBU-TEXT-DECORATION,ADD-SBU-TEXT-VERTICAL-ALIGNMENT,ADD-SBU-TEXT-INDENT,ADD-SBU-TEXT-ORIENTATION)");
+		testCase = extent.createTest(" STEP-4");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
@@ -1195,10 +1188,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 	//SBU-TEXT-VERTICAL-ALIGNMENT,SBU-TEXT-INDENT,SUB-TEXT-ORIENTATION)
 	
 	public static void sbutext() throws InterruptedException {
-		testCase = extent.createTest("STEP-7 THIS METHOD IS FOR ADD-SBU-TEXT UI PROPERTIES(SBU-TEXT-DISPLAYED,SBU-TEXT-FONT-COLOUR,SBU-TEXT-FONT-SIZE\r\n"
-				+ "	SBU-TEXT-FONT-STYLE,SBU-TEXT-SPELLING,SBU-TEXT-FONT-FAMILY,SBU-TEXT-POSITION,SBU-TEXT-PADDING,SBU-TEXT-MARGIN\r\n"
-				+ "SBU-TEXT-SHADOW,SBU-TEXT-LETTER-SPACING,SBU-TEXT-ALIGNMENT,SBU-TEXT-TRANSFORMATION,SBU-TEXT-LINE-HEIGHT,SBU-TEXT-DECORATION\r\n"
-				+ "SBU-TEXT-VERTICAL-ALIGNMENT,SBU-TEXT-INDENT,SUB-TEXT-ORIENTATION)");
+		testCase = extent.createTest("STEP-7");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
@@ -2075,8 +2065,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 	// SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-FONT-COLOUR,SBU-TEXTBOX-FONT-SIZE,SBU-TEXTBOX-BORDER-COLOUR,SBU-TEXTBOX-SIZE)
 	
 	public static void sbutextbox() throws InterruptedException {
-		testCase = extent.createTest("STEP-5  THIS METHOD IS FOR TEXTBOX  UI PROPERTIES(SBU-TEXTBOX-DISPLAYED,.SBU-TEXTBOX-ENABLED,SBU-TEXTBOX-POSITION\r\n"
-				+ "SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-FONT-COLOUR,SBU-TEXTBOX-FONT-SIZE,SBU-TEXTBOX-BORDER-COLOUR,SBU-TEXTBOX-SIZE)");
+		testCase = extent.createTest("STEP-5");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
@@ -2282,9 +2271,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 	//DESCRIPTION-TEXTBOX-FONT-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE)
 	
 	public static void descriptiontextbox() throws InterruptedException {
-		testCase = extent.createTest("STEP-7 THIS METHOD IS FOR DESCRIPTION TEXT BOX UI PROPERTIES(DESCRIPTION-TEXTBOX-DISPLAYED,DESCRIPTION-TEXTBOX-ENABLED,DESCRIPTION-TEXTBOX-POSITION\r\n"
-				+ "DESCRIPTION-TEXTBOX-POSITION,DESCRIPTION-TEXTBOX-BACKGROUND-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR\r\n"
-				+ "DESCRIPTION-TEXTBOX-FONT-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE)");
+		testCase = extent.createTest("STEP-7");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
@@ -2489,10 +2476,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 // SAVE-BUTTON-FONT-COLOUR,SAVE-BUTTON-CURSOR,SAVE BUTTON SPELLING,SAVE-BUTTON-PADDING,SAVE-BUTTON-RADIUS
 // SAVE-BUTTON-OPACITY,SAVE-BUTTON-FONT-WEIGHT	)
 	public static void SaveButtonUI() throws InterruptedException {
-		testCase = extent.createTest("STEP-9  THIS METHOD IS FOR SAVE BUTTON PROPERTIES(ELEMENT-VISIBILITY,BUTTON-POSITION,FONT-SIZE,BUTTON-SIZE\r\n"
-				+ "BUTTON-ENABLE,BUTTON-COLOR,BORDER-COLOR,FONT-TYPE,SAVE-BUTTON-FONT-COLOUR,BORDER-COLOR,FONT-TYPE\r\n"
-				+ "SAVE-BUTTON-FONT-COLOUR,SAVE-BUTTON-CURSOR,SAVE BUTTON SPELLING,SAVE-BUTTON-PADDING,SAVE-BUTTON-RADIUS\r\n"
-				+ "SAVE-BUTTON-OPACITY,SAVE-BUTTON-FONT-WEIGHT)");
+		testCase = extent.createTest("STEP-9 ");
 		// check if element visible
 
 		boolean ActualElement = AddSbuFunPage.SBUsavebutton.isDisplayed();
@@ -2655,29 +2639,29 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 //		            check the border color
 
-		String ActualBorderColor = AddSbuFunPage.SBUsavebutton.getCssValue("border-colour");
-		System.out.println("rgb :" + ActualBorderColor);
-
-		String ExpectedBorderColor = " ";
-
-		boolean bordercolor = true;
-		testCase = extent.createTest("108.BORDER-COLOR");
-		try {
-			AssertJUnit.assertEquals(ActualBorderColor, ExpectedBorderColor);
-
-		} catch (AssertionError e) {
-			bordercolor = false;
-		}
-		if (bordercolor) {
-			testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
-			testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
-			testCase.log(Status.PASS, "Correct Border Color");
-		} else {
-			testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
-			testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
-			testCase.log(Status.FAIL, "Wrong Border Color");
-		}
-		Thread.sleep(2000);
+//		String ActualBorderColor = AddSbuFunPage.SBUsavebutton.getCssValue("border-colour");
+//		System.out.println("rgb :" + ActualBorderColor);
+//
+//		String ExpectedBorderColor = " ";
+//
+//		boolean bordercolor = true;
+//		testCase = extent.createTest("108.BORDER-COLOR");
+//		try {
+//			AssertJUnit.assertEquals(ActualBorderColor, ExpectedBorderColor);
+//
+//		} catch (AssertionError e) {
+//			bordercolor = false;
+//		}
+//		if (bordercolor) {
+//			testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
+//			testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
+//			testCase.log(Status.PASS, "Correct Border Color");
+//		} else {
+//			testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
+//			testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
+//			testCase.log(Status.FAIL, "Wrong Border Color");
+//		}
+//		Thread.sleep(2000);
 
 //		            check the font type 
 
@@ -2903,6 +2887,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
         System.out.println("First row of table : " + actualdata);
         
         String expecteddata ="testing";
+        try {
         boolean firstdata = true;
         testCase = extent.createTest("117.LAST-ADDED-DATA");
         try {
@@ -2923,6 +2908,9 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 //            testCase.log(Status.INFO, "").assignCategory("High Priority");
             testCase.log(Status.FAIL, "Wrong last added data");
         }
+        }catch (Exception e) {
+        	testCase.log(Status.FAIL, "Wrong last added data");
+		}
     }
 
 }

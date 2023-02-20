@@ -37,9 +37,14 @@ public class AddSbuFunPage {
 	@FindBy(xpath = "/html/body/div[3]/div/div[2]/div/div[2]/div[2]/form/div/div[2]/div/label")
 	public static WebElement DescriptionText;
 		
-	@FindBy(xpath = "//*[@id=\"sub_business_unit\"]")
+	
+//	@FindBy(xpath = "//*[@id=\"sub_business_unit\"]") 
+//	public static WebElement SBUtextbox;
+	
+	//xpath written by Rahul.S
+	@FindBy(xpath = "//input[@id='sub_business_unit']") 
 	public static WebElement SBUtextbox;
-		
+	
 		@FindBy(xpath = "//*[@id=\"description\"]")
 		public static WebElement Descriptiontextbox;
 		@FindBy(xpath = "//*[@id=\"sub_business_unit\"]")
@@ -48,8 +53,18 @@ public class AddSbuFunPage {
 		@FindBy(xpath = "//*[@id=\"description\"]")
 		public static WebElement SBUdestext;
 		
-		@FindBy(xpath = "/html/body/div[3]/div/div[2]/div/div[2]/div[3]/div/button[2]")
-		public static WebElement SBUsavebutton;
+//		Copied from system
+//		@FindBy(xpath = "/html/body/div[3]/div/div[2]/div/div[2]/div[3]/div/button[2]")
+//		public static WebElement SBUsavebutton;
+		
+//xpath written by Rahul.S
+//		@FindBy(xpath = "//button[@type='button'][@class='ant-btn sc-gZMcBi dMdnOw'][@style='background: rgb(0, 19, 40); color: white; border: none;']")
+//		public static WebElement SBUsavebutton;
+		
+//xpath written by arunan anna		
+		@FindBy(xpath = "//div[@class=\"ant-modal-footer\"]/div/button[@type=\"button\"][@class=\"ant-btn sc-gZMcBi dMdnOw\"]")
+	    public static WebElement SBUsavebutton;
+		
 		
 		@FindBy(xpath = "//*[@id=\"rcDialogTitle0\"]/div/span")
 		public static WebElement SBUclose;
