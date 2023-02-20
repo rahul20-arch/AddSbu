@@ -23,8 +23,15 @@ import com.invicta.qa.pages.sbu.AddSbuUIPage;
 public class AddSbuUITest extends DriverIntialization {
 	
 
-	// STEP-1 ADD-SBU UI METHOD
+	// STEP-1 ADD-SBU UI METHOD(ADD-SBU-BUTTON-ENABLED,CHECK THE CLICKABILITY, ADD-SBU-VISIBLE,
+	// ADD-SBU-FONT-COLOUR,ADD SBU-FONT- SIZE,Add SBU BUTTON FONT FAMILY,Add SBU BUTTON SPELLING
+	// Add SBU BUTTON POSITION,Add SBU BUTTON PADDING,Add SBU BUTTON SHADOW,Add SBU BACKGROUND COLOR,Add SBU BORDER COLOR
+	// Add SBU CURSER POINT,Add SBU OPACITY,Add SBU HEIGHT,Add SBU WIDTH,Add SBU FONT WEIGHT )
 	public static void addsbubutton() throws InterruptedException {
+		testCase = extent.createTest(" STEP-1 ADD-SBU UI METHOD(ADD-SBU-BUTTON-ENABLED,CHECK THE CLICKABILITY, ADD-SBU-VISIBLE,\r\n"
+				+ "	 ADD-SBU-FONT-COLOUR,ADD SBU-FONT- SIZE,Add SBU BUTTON FONT FAMILY,Add SBU BUTTON SPELLING\r\n"
+				+ "	 Add SBU BUTTON POSITION,Add SBU BUTTON PADDING,Add SBU BUTTON SHADOW,Add SBU BACKGROUND COLOR,Add SBU BORDER COLOR\r\n"
+				+ "	 Add SBU CURSER POINT,Add SBU OPACITY,Add SBU HEIGHT,Add SBU WIDTH,Add SBU FONT WEIGHT )");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
@@ -35,7 +42,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 				boolean ActualImageDisplay = AddSbuFunPage.SBUbutton.isDisplayed();
 				boolean ExpectedImageDisplay = true;
-				testCase = extent.createTest("ADD-SBU-BUTTON-ENABLED");
+				testCase = extent.createTest("1.ADD-SBU-BUTTON-ENABLED");
 				try {
 					Assert.assertEquals(ActualImageDisplay, ExpectedImageDisplay);
 					testCase.log(Status.INFO, "Actual Image Displayed :- " + ActualImageDisplay);
@@ -47,7 +54,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, " Image Displayed is Wrong");
 				}
 
-				// CHEKC THE CLICKABILITY
+				// CHECK THE CLICKABILITY
 
 				boolean clickable = AddSbuFunPage.SBUbutton.isDisplayed();
 
@@ -55,7 +62,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String originalPageSource = driver.getPageSource();
 
 				AddSbuFunPage.SBUbutton.click();
-				System.out.println("Element is clicked");
+				System.out.println("2.CHECK THE CLICKABILITY");
 
 				String updatedURL = driver.getCurrentUrl();
 				String updatedPageSource = driver.getPageSource();
@@ -74,7 +81,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 				boolean clickable1 = true;
 
-				testCase = extent.createTest("BUTTON-CLICKABLE");
+				testCase = extent.createTest("CHECK THE CLICKABILITY");
 				try {
 					AssertJUnit.assertEquals(String.valueOf(clickable), "true");
 					// System.out.println(String.valueOf(clickable));
@@ -95,25 +102,25 @@ public class AddSbuUITest extends DriverIntialization {
 				}
 
 			} else {
-				testCase = extent.createTest("ADD-SBU-BUTTON-NOT-ENABLED");
-				testCase.log(Status.INFO, "Image Not Displayed");
-				testCase.log(Status.FAIL, " Image Not Displayed");
+				testCase = extent.createTest("2.ADD-SBU-BUTTON-NOT-ENABLED");
+				testCase.log(Status.INFO, "Not clickable");
+				testCase.log(Status.FAIL, " Not clickable");
 			}
 		} catch (NoSuchElementException e) {
-			testCase = extent.createTest("lOGIN-BUTTON Locator");
-			testCase.log(Status.INFO, "Dont Have Image Locator");
-			testCase.log(Status.FAIL, " Dont Have Image Locator");
+			testCase = extent.createTest("2.ADD-SBU-BUTTON-NOT-ENABLED");
+			testCase.log(Status.INFO, "Not clickable");
+			testCase.log(Status.FAIL, " Not clickable");
 		}
 
 		// ****************** Add SBU Button
 
-		// Add SBU Button Text Visible
+		// ADD-SBU-VISIBLE
 
 		try {
 			boolean ExpectedTextVisible = true;
 			System.out.println("IsVisible");
 			boolean ActualTextVisible = AddSbuFunPage.SBUbutton.isDisplayed();
-			testCase = extent.createTest("1-ADD-SBU-VISIBLE");
+			testCase = extent.createTest("3-ADD-SBU-VISIBLE");
 			try {
 				Assert.assertEquals(ActualTextVisible, ExpectedTextVisible);
 				testCase.log(Status.INFO, "Actual Visible :- " + ActualTextVisible);
@@ -125,17 +132,17 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "Wrong");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("1-ADD-SBU-VISIBLE");
+			testCase = extent.createTest("3-ADD-SBU-VISIBLE");
 			testCase.log(Status.FAIL, "No element");
 		}
 
-		// Add SBU Button FONT COLOR
+		// ADD-SBU-FONT-COLOUR
 
 		try {
 			String ActualTitleFontColor = AddSbuFunPage.SBUbutton.getCssValue("color");
 			System.out.println("Font color of button: " + ActualTitleFontColor);
 			String ExpectedTitleFontColor = "rgba(255, 255, 255, 1)";
-			testCase = extent.createTest("2.ADD-SBU-FONT-COLOUR");
+			testCase = extent.createTest("4.ADD-SBU-FONT-COLOUR");
 
 			try {
 				AssertJUnit.assertEquals(ActualTitleFontColor, ExpectedTitleFontColor);
@@ -151,17 +158,17 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "wrong font Colour");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("2.ADD SBU-FONT-COLOUR");
+			testCase = extent.createTest("4.ADD SBU-FONT-COLOUR");
 			testCase.log(Status.FAIL, "No element");
 		}
 
-		// Add SBU Button FONTSIZE
+		// ADD SBU-FONT- SIZE
 
 		try {
 			String ActualTitleFontsSize = AddSbuFunPage.SBUbutton.getCssValue("font-size");
 			System.out.println("Font Size: " + ActualTitleFontsSize);
 			String ExpectedTitleFontsSize = "14px";
-			testCase = extent.createTest("3.ADD SBU-FONT- SIZE");
+			testCase = extent.createTest("5.ADD SBU-FONT- SIZE");
 			try {
 				AssertJUnit.assertEquals(ActualTitleFontsSize, ExpectedTitleFontsSize);
 				testCase.log(Status.INFO, "ActualfontSize :-" + ActualTitleFontsSize);
@@ -176,7 +183,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("3.ADD SBU FONT- SIZE");
+			testCase = extent.createTest("5.ADD SBU FONT- SIZE");
 			testCase.log(Status.FAIL, "No Element");
 		}
 
@@ -186,7 +193,7 @@ public class AddSbuUITest extends DriverIntialization {
 			String ActualElementfamily = AddSbuFunPage.SBUbutton.getCssValue("font-family");
 			System.out.println("FONT-FAMILY: " + ActualElementfamily);
 			String ExpectedElementFamily = "Roboto, sans-serif";
-			testCase = extent.createTest("4.ADD-SBU-FONT-FAMILY");
+			testCase = extent.createTest("6.ADD-SBU-FONT-FAMILY");
 			try {
 				Assert.assertEquals(ActualElementfamily, ExpectedElementFamily);
 				testCase.log(Status.INFO, "ActualText :- " + ActualElementfamily);
@@ -198,17 +205,17 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "wrong Text");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("4.FONT-FAMILY");
+			testCase = extent.createTest("6.ADD-SBU-FONT-FAMILY");
 			testCase.log(Status.FAIL, "NO ELEMENT");
 		}
 
-		// Add SBU Button Spelling
+		// ADD-SBU-SPELLING-TEXT
 
 		try {
 			String AcctualTitleText = AddSbuFunPage.SBUbutton.getText();
 			String ExpectedTitleText = "Add SBU";
 			System.out.println(" Text:" + AcctualTitleText);
-			testCase = extent.createTest("5.ADD-SBU-SPELLING-TEXT");
+			testCase = extent.createTest("7.ADD-SBU-SPELLING-TEXT");
 			try {
 
 				testCase.log(Status.INFO, "AcctualText :- " + AcctualTitleText);
@@ -222,11 +229,11 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "Wrong Element");
 			}
 		} catch (Exception find9) {
-			testCase = extent.createTest("5.ADD-SBU-SPELLING-TEXT");
+			testCase = extent.createTest("7.ADD-SBU-SPELLING-TEXT");
 			testCase.log(Status.FAIL, "No Element");
 		}
 
-		// Add SBU Button Position
+		//ADD-SBU-BUTTON-POSITION
 
 		try {
 			Point ActulalLocation = AddSbuFunPage.SBUbutton.getLocation();
@@ -236,7 +243,7 @@ public class AddSbuUITest extends DriverIntialization {
 			System.out.println("Y axis: " + actual_y);
 			Point ExpectedLocation = new Point(588, 93);
 
-			testCase = extent.createTest("6.ADD-SBU-BUTTON-POSITION");
+			testCase = extent.createTest("8.ADD-SBU-BUTTON-POSITION");
 			try {
 				AssertJUnit.assertEquals(ActulalLocation, ExpectedLocation);
 				testCase.log(Status.INFO, "ActualFontSize :- " + ActulalLocation);
@@ -248,18 +255,18 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "Wrong Location");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("6.ADD-SBU-POSITION");
+			testCase = extent.createTest("8.ADD-SBU-POSITION");
 			testCase.log(Status.FAIL, "NO ELEMENT");
 
 		}
 
-		// Add SBU Button Padding
+		// ADD-SBU-TEXT PADDING
 
 		try {
 			String Actualpadding = AddSbuFunPage.SBUbutton.getCssValue("padding");
 			System.out.println("PADDING: " + Actualpadding);
 			String Expectedpadding = "4px 15px";
-			testCase = extent.createTest("7.ADD-SBU-TEXT PADDING");
+			testCase = extent.createTest("9.ADD-SBU-TEXT PADDING");
 			try {
 				Assert.assertEquals(Actualpadding, Expectedpadding);
 				testCase.log(Status.INFO, "Actual padding :- " + Actualpadding);
@@ -271,17 +278,17 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "padding is Wrong");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("7.ADD-SBU-PADDING");
+			testCase = extent.createTest("9.ADD-SBU-PADDING");
 			testCase.log(Status.FAIL, "NO ELEMENT");
 		}
 
-		// Add SBU Button Shadow
+		// ADD-SBU-BOX-SHADOW
 
 		try {
 			String Actualshadow = AddSbuFunPage.SBUbutton.getCssValue("box-shadow");
 			System.out.println("Text Shadow :" + Actualshadow);
 			String ExpectedShadow = "rgba(0, 0, 0, 0.016) 0px 2px 0px 0px";
-			testCase = extent.createTest("8.ADD-SBU-BOX-SHADOW");
+			testCase = extent.createTest("10.ADD-SBU-BOX-SHADOW");
 			try {
 				AssertJUnit.assertEquals(Actualshadow, ExpectedShadow);
 				testCase.log(Status.INFO, "ActualShadow :- " + Actualshadow);
@@ -293,7 +300,7 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "Shadow not available");
 			}
 		} catch (Exception find6) {
-			testCase = extent.createTest("8.ADD-SBU-BOX-SHADOW");
+			testCase = extent.createTest("10.ADD-SBU-BOX-SHADOW");
 			testCase.log(Status.FAIL, "No Element");
 		}
 
@@ -304,7 +311,7 @@ public class AddSbuUITest extends DriverIntialization {
 			System.out.println("BACKGROUND COLOR:" + Actualbackground);
 			String Expectedbackground = "rgba(255, 255, 255, 1)";
 
-			testCase = extent.createTest("9.ADD-SBU-BACKGROUND COLOR");
+			testCase = extent.createTest("11.ADD-SBU-BACKGROUND COLOR");
 			try {
 				AssertJUnit.assertEquals(Actualbackground, Expectedbackground);
 
@@ -318,7 +325,7 @@ public class AddSbuUITest extends DriverIntialization {
 			}
 		} catch (Exception e) {
 			testCase.log(Status.FAIL, "No Element");
-			testCase = extent.createTest("9.ADD-SBU-BACKGROUND COLOR");
+			testCase = extent.createTest("11.ADD-SBU-BACKGROUND COLOR");
 		}
 
 		// Add SBU Button BORDER COLOR
@@ -327,7 +334,7 @@ public class AddSbuUITest extends DriverIntialization {
 			String actualbordercolor = AddSbuFunPage.SBUbutton.getCssValue("border-color");
 			System.out.println(" border-color:" + actualbordercolor);
 			String Expectedbordercolor = "rgb(255, 255, 255)";
-			testCase = extent.createTest("10.ADD-SBU-BORDER-COLOR");
+			testCase = extent.createTest("12.ADD-SBU-BORDER-COLOR");
 			try {
 				AssertJUnit.assertEquals(actualbordercolor, Expectedbordercolor);
 				testCase.log(Status.INFO, "Actualbordercolor :- " + actualbordercolor);
@@ -343,7 +350,7 @@ public class AddSbuUITest extends DriverIntialization {
 			}
 		} catch (Exception e) {
 			testCase.log(Status.FAIL, "NO ELEMENT");
-			testCase = extent.createTest("10.ADD-SBU-BORDER-COLOR");
+			testCase = extent.createTest("12.ADD-SBU-BORDER-COLOR");
 		}
 
 		// Add SBU Button CURSER POINT
@@ -352,7 +359,7 @@ public class AddSbuUITest extends DriverIntialization {
 			String ActualCursor = AddSbuFunPage.SBUbutton.getCssValue("cursor");
 			System.out.println("cursor :" + ActualCursor);
 			String Expectedcursor = "pointer";
-			testCase = extent.createTest("11.ADD-SBU-CURSOR");
+			testCase = extent.createTest("13.ADD-SBU-CURSOR");
 			try {
 				AssertJUnit.assertEquals(ActualCursor, Expectedcursor);
 				testCase.log(Status.INFO, "ActualCursor :- " + ActualCursor);
@@ -365,7 +372,7 @@ public class AddSbuUITest extends DriverIntialization {
 			}
 		} catch (Exception e) {
 			testCase.log(Status.FAIL, "No Element");
-			testCase = extent.createTest("11.ADD-SBU-CURSOR");
+			testCase = extent.createTest("13.ADD-SBU-CURSOR");
 		}
 
 		// Add SBU Button OPACITY
@@ -375,7 +382,7 @@ public class AddSbuUITest extends DriverIntialization {
 			System.out.println("OPACITY :" + Actualopacity);
 
 			String Expectedopacity = "1";
-			testCase = extent.createTest("12.ADD-SBU-OPACITY");
+			testCase = extent.createTest("14.ADD-SBU-OPACITY");
 			try {
 				AssertJUnit.assertEquals(Actualopacity, Expectedopacity);
 				testCase.log(Status.INFO, "ActualTextTransformation :- " + Actualopacity);
@@ -387,7 +394,7 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "wrong");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("12.ADD-SBU-OPACITY");
+			testCase = extent.createTest("14.ADD-SBU-OPACITY");
 			testCase.log(Status.FAIL, "No Element");
 		}
 
@@ -397,7 +404,7 @@ public class AddSbuUITest extends DriverIntialization {
 			String ActualHeight = AddSbuFunPage.SBUbutton.getCssValue("height");
 			System.out.println("Height :" + ActualHeight);
 			String ExpectedHeight = "32px";
-			testCase = extent.createTest("13.ADD-SBU-HEIGHT");
+			testCase = extent.createTest("15.ADD-SBU-HEIGHT");
 			try {
 				AssertJUnit.assertEquals(ActualHeight, ExpectedHeight);
 				testCase.log(Status.INFO, "ActualLineHeight :- " + ActualHeight);
@@ -409,7 +416,7 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "wrong");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("13.ADD-SBU-HEIGHT");
+			testCase = extent.createTest("15.ADD-SBU-HEIGHT");
 			testCase.log(Status.FAIL, "No element");
 		}
 
@@ -420,7 +427,7 @@ public class AddSbuUITest extends DriverIntialization {
 			System.out.println("width :" + Actualwidth);
 
 			String Expectedwidth = "180px";
-			testCase = extent.createTest("14.ADD-SBU-WIDTH");
+			testCase = extent.createTest("16.ADD-SBU-WIDTH");
 			try {
 				AssertJUnit.assertEquals(Actualwidth, Expectedwidth);
 				testCase.log(Status.INFO, "Actualwidth :- " + Actualwidth);
@@ -432,7 +439,7 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.FAIL, "wrong");
 			}
 		} catch (Exception e) {
-			testCase = extent.createTest("14.ADD-SBU-WIDTH");
+			testCase = extent.createTest("16.ADD-SBU-WIDTH");
 			testCase.log(Status.FAIL, "No element");
 		}
 
@@ -440,9 +447,9 @@ public class AddSbuUITest extends DriverIntialization {
 
 		try {
 			String Actualweight = AddSbuFunPage.SBUbutton.getCssValue("font-weight");
-			System.out.println("16.Font-weight :" + Actualweight);
+			System.out.println("Font-weight :" + Actualweight);
 			String Expectedweight = "400";
-			testCase = extent.createTest("15.ADD-SBU-FONT-WEIGHT");
+			testCase = extent.createTest("17.ADD-SBU-FONT-WEIGHT");
 			try {
 				AssertJUnit.assertEquals(Actualweight, Expectedweight);
 				testCase.log(Status.INFO, "Actualfontweight :- " + Actualweight);
@@ -455,20 +462,21 @@ public class AddSbuUITest extends DriverIntialization {
 			}
 		} catch (Exception e) {
 			testCase.log(Status.FAIL, "No Element");
-			testCase = extent.createTest("15.ADD-SBU-FONT-WEIGHT");
+			testCase = extent.createTest("17.ADD-SBU-FONT-WEIGHT");
 		}
 
 		System.out.println();
 	}
 	
-	// METHOD-2 -- ADD-SBU BUTTON CLICK METHOD(FUNCTIONAL)
+	// METHOD-2 -- ADD-SBU BUTTON CLICK METHOD(ADD-SBU CLICK)
 		public static void addsbuclick() throws InterruptedException {
+			testCase = extent.createTest(" METHOD-2 -- ADD-SBU BUTTON CLICK METHOD(ADD-SBU CLICK)");
 			// AddSbuFunPage AddFunPg = new AddSbuFunPage();
 			 Thread.sleep(3000);
 			//AddSbuFunPage.SBUbutton.click();
 			boolean ActualTextDisplay = AddSbuFunPage.addsbumodel.isDisplayed();
 			boolean ExpectedTestDisplay = true;
-			testCase = extent.createTest("ADD-SBU CLICK");
+			testCase = extent.createTest("18.ADD-SBU CLICK");
 			try {
 				Assert.assertEquals(ActualTextDisplay, ExpectedTestDisplay);
 				testCase.log(Status.INFO, "ACTUAL ADD SBU IS CLICKED :- " + ActualTextDisplay);
@@ -482,16 +490,19 @@ public class AddSbuUITest extends DriverIntialization {
 		}
 
 	//**************************************************************
-//STEP-3 THIS METHOD IS FOR MODAL(UI)
+//STEP-3 THIS METHOD IS FOR POPUP WINDOW UI PROPERTIES(POPUP-Window-Visible,POPUP-WINDOW-POSITION,POPUP-WINDOW SIZE,POPUP-WINDOW-BORDER-COLOR
+		//POPUP-WINDOW-OVERFLOW-TYPE,POPUP-WINDOW-MARGIN,POPUP-WINDOW-CURSOR-TYPE,POPUP-WINDOW-Z-INDEX-TYPE,)
 		public static void addsbumodal() throws InterruptedException  
 		{		
+			testCase = extent.createTest("STEP-3 THIS METHOD IS FOR POPUP WINDOW UI PROPERTIES(POPUP-Window-Visible,POPUP-WINDOW-POSITION,POPUP-WINDOW SIZE,POPUP-WINDOW-BORDER-COLOR\r\n"
+					+ "POPUP-WINDOW-OVERFLOW-TYPE,POPUP-WINDOW-MARGIN,POPUP-WINDOW-CURSOR-TYPE,POPUP-WINDOW-Z-INDEX-TYPE,)");
 			//Model Window visible 
 		 			Thread.sleep(2000);
 				
 					boolean AcctualVisible = AddSbuFunPage.addsbumodel.isDisplayed();
 					boolean ExpectedVisible = true;
 
-					testCase = extent.createTest("001-Model-Window-Visible");
+					testCase = extent.createTest("19-POPUP-Window-Visible");
 					try {
 						AssertJUnit.assertEquals(AcctualVisible, ExpectedVisible);
 						testCase.log(Status.INFO, "ActualElement :- " + AcctualVisible);
@@ -507,7 +518,7 @@ public class AddSbuUITest extends DriverIntialization {
 					
 					Thread.sleep(2000);
 
-		// Model Window position 
+		//POPUP Window position 
 
 					Point ActualLocation = AddSbuFunPage.addsbumodel.getLocation();
 
@@ -519,7 +530,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 					Point ExpectedLocation = new Point(383, 100);
 
-					testCase = extent.createTest("002-MODAL-POSITION");
+					testCase = extent.createTest("20-POPUP-WINDOW-POSITION");
 					try {
 						AssertJUnit.assertEquals(ActualLocation, ExpectedLocation);
 						testCase.log(Status.INFO, "ActualFontSize :- " + ActualLocation);
@@ -533,13 +544,13 @@ public class AddSbuUITest extends DriverIntialization {
 					
 					Thread.sleep(2000);
 
-		//Model Window size
+		//POPUP-WINDOW SIZE
 
 					Dimension ActualSize = AddSbuFunPage.addsbumodel.getSize();
 					System.out.println("Size : " + ActualSize);
 					Dimension ExpectedSize = new Dimension(600, 230);
 
-					testCase = extent.createTest("003-MODAL-SIZE");
+					testCase = extent.createTest("21-POPUP-WINDOW-SIZE");
 					try {
 						AssertJUnit.assertEquals(ActualSize, ExpectedSize);
 						testCase.log(Status.INFO, "ActualSize :- " + ActualSize);
@@ -553,13 +564,13 @@ public class AddSbuUITest extends DriverIntialization {
 				
 					Thread.sleep(2000);
 
-		// Model Window background-color
+		// POPUP-WINDOW-BACKGROUND-COLOR
 
 					String ActualButtonColor = AddSbuFunPage.addsbumodel.getCssValue("background-color");
 					System.out.println("rgb :" + ActualButtonColor);
 					String ExpectedButtonColor = "rgba(255, 255, 255, 1)";
 
-					testCase = extent.createTest("004-MODAL-BACKGROUND-COLOR");
+					testCase = extent.createTest("22-POPUP-WINDOW-BACKGROUND-COLOR");
 					try {
 						AssertJUnit.assertEquals(ActualButtonColor, ExpectedButtonColor);
 						testCase.log(Status.INFO, "ActualButtonColor :- " + ActualButtonColor);
@@ -574,13 +585,13 @@ public class AddSbuUITest extends DriverIntialization {
 					
 					Thread.sleep(2000);
 
-		// Model Window border-color
+		// POPUP-WINDOW-BORDER-COLOR
 					
 					String ActualBorderColor = AddSbuFunPage.addsbumodel.getCssValue("border-color");
 					System.out.println("rgb :" + ActualBorderColor);
 					String ExpectedBorderColor = "rgba(0, 0, 0, 0.85)";
 
-					testCase = extent.createTest("005-MODAL-BORDER-COLOR");
+					testCase = extent.createTest("23-POPUP-WINDOW-BORDER-COLOR");
 					try {
 						AssertJUnit.assertEquals(ActualBorderColor, ExpectedBorderColor);
 						testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
@@ -595,13 +606,13 @@ public class AddSbuUITest extends DriverIntialization {
 					
 					Thread.sleep(2000);
 
-		// Model Window overflow
+		//POPUP-WINDOW-OVERFLOW-TYPE
 
 					String ActualOverflow = AddSbuFunPage.addsbumodel.getCssValue("overflow");
 					System.out.println("overflow :" + ActualOverflow);
 					String ExpectedOverflow = "visible";
 
-					testCase = extent.createTest("006-MODAL-OVERFLOW-TYPE");
+					testCase = extent.createTest("24-POPUP-WINDOW-OVERFLOW-TYPE");
 					try {
 						AssertJUnit.assertEquals(ActualOverflow, ExpectedOverflow);
 						testCase.log(Status.INFO, "ActualOverflow :- " + ActualOverflow);
@@ -616,13 +627,13 @@ public class AddSbuUITest extends DriverIntialization {
 				
 					Thread.sleep(2000);
 
-		// Model element margin
+		// POPUP-WINDOW-MARGIN
 
 					String ActualMargin = AddSbuFunPage.addsbumodel.getCssValue("margin");
 					System.out.println("margin :" + ActualMargin);
 					String ExpectedMargin = "0px";
 
-					testCase = extent.createTest("007-MODAL-MARGIN-TYPE");
+					testCase = extent.createTest("25-POPUP-WINDOW-MARGIN");
 					try {
 						AssertJUnit.assertEquals(ActualMargin, ExpectedMargin);
 						testCase.log(Status.INFO, "ActualMargin :- " + ActualMargin);
@@ -637,13 +648,13 @@ public class AddSbuUITest extends DriverIntialization {
 					
 					Thread.sleep(2000);
 
-		// ***** element cursor
+		// ***** POPUP-WINDOW-CURSOR-TYPE
 
 					String ActualActions = AddSbuFunPage.addsbumodel.getCssValue("cursor");
 					System.out.println("cursor :" + ActualActions);
 					String ExpectedActions = "auto";
 
-					testCase = extent.createTest("008-MODAL-CURSOR-TYPE");
+					testCase = extent.createTest("26-POPUP-WINDOW-CURSOR-TYPE");
 					try {
 						AssertJUnit.assertEquals(ActualActions, ExpectedActions);
 						testCase.log(Status.INFO, "ActualFontSize :- " + ActualActions);
@@ -657,13 +668,13 @@ public class AddSbuUITest extends DriverIntialization {
 					
 					Thread.sleep(2000);
 
-		// ***** element z-index
+		// *****POPUP-WINDOW-Z-INDEX-TYPE
 
 					String ActualZindex = AddSbuFunPage.addsbumodel.getCssValue("z-index");
 					System.out.println("z-index :" + ActualZindex);
 					String ExpectedZindex = "auto";
 
-					testCase = extent.createTest("009-MODAL-Z-INDEX-TYPE");
+					testCase = extent.createTest("27-POPUP-WINDOW-Z-INDEX-TYPE");
 					try {
 						AssertJUnit.assertEquals(ActualZindex, ExpectedZindex);
 						testCase.log(Status.INFO, "ActualZindex :- " + ActualZindex);
@@ -702,20 +713,28 @@ public class AddSbuUITest extends DriverIntialization {
 //				}
 //******************************************************************************************************************
 
-	// STEP-4 THIS METHOD IS FOR TEXT(INSIDE MODAL)
+	// STEP-4 THIS METHOD IS FOR ADD-SBU TEXT(INSIDE  POPUP-WINDOW) UI PROPERTIES(ADD-SBU-TEXT-DISPLAYED,ADD-SBU-TEXT-FONT-COLOUR
+	// ADD-SBU-TEXT-FONT-SIZE,ADD-SBU-TEXT-FONT-STYLE,ADD-SBU-TEXT-SPELLING,ADD-SBU-TEXT-FONT-FAMILY,ADD-SBU-TEXT-POSITION
+	// ADD-SBU-TEXT-PADDING,ADD-SUB-TEXT-SHADOW,ADD-SBU-TEXT-LETTER-SPACING,ADD-SBU-TEXT-ALIGNMENT,ADD-SBU-TEXT-TRANSFORMATION
+	// ADD-SBU-TEXT-LINE-HEIGHT,ADD-SBU-TEXT-DECORATION,ADD-SBU-TEXT-VERTICAL-ALIGNMENT,ADD-SBU-TEXT-INDENT,ADD-SBU-TEXT-ORIENTATION)	
+	// 	
 	
 	public static void addsbutext() throws InterruptedException {
+		testCase = extent.createTest(" STEP-4 THIS METHOD IS FOR ADD-SBU TEXT(INSIDE  POPUP-WINDOW) UI PROPERTIES(ADD-SBU-TEXT-DISPLAYED,ADD-SBU-TEXT-FONT-COLOUR\r\n"
+				+ " ADD-SBU-TEXT-FONT-SIZE,ADD-SBU-TEXT-FONT-STYLE,ADD-SBU-TEXT-SPELLING,ADD-SBU-TEXT-FONT-FAMILY,ADD-SBU-TEXT-POSITION\r\n"
+				+ "ADD-SBU-TEXT-PADDING,ADD-SUB-TEXT-SHADOW,ADD-SBU-TEXT-LETTER-SPACING,ADD-SBU-TEXT-ALIGNMENT,ADD-SBU-TEXT-TRANSFORMATION\r\n"
+				+ "ADD-SBU-TEXT-LINE-HEIGHT,ADD-SBU-TEXT-DECORATION,ADD-SBU-TEXT-VERTICAL-ALIGNMENT,ADD-SBU-TEXT-INDENT,ADD-SBU-TEXT-ORIENTATION)");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
 		try {
 			if (AddSbuFunPage.AddSBUtext.isDisplayed()) {
 
-//								Text Displayed
+//								ADD-SBU-TEXT-DISPLAYED
 
 				boolean ActualTextDisplay = AddSbuFunPage.AddSBUtext.isDisplayed();
 				boolean ExpectedTestDisplay = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-DISPLAYED");
+				testCase = extent.createTest("28.ADD-SBU-TEXT-DISPLAYED");
 				try {
 					Assert.assertEquals(ActualTextDisplay, ExpectedTestDisplay);
 					testCase.log(Status.INFO, "Actual text Displayed :- " + ActualTextDisplay);
@@ -727,13 +746,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, " text is not displayed ");
 				}
 
-				// text font color
+				// ADD-SBU-TEXT-FONT-COLOUR
 
 				String Actualtextcolor = AddSbuFunPage.AddSBUtext.getCssValue("font-color");
 
 				String Expectedtextcolor = "";
 				System.out.println("font colour :" + Actualtextcolor);
-				testCase = extent.createTest("ADD-SBU-TEXT-FONT-COLOUR");
+				testCase = extent.createTest("29.ADD-SBU-TEXT-FONT-COLOUR");
 				try {
 					Assert.assertEquals(Actualtextcolor, Expectedtextcolor);
 					testCase.log(Status.INFO, "Actual font colour:- " + Actualtextcolor);
@@ -745,13 +764,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong font colour");
 				}
 
-				// text font size
+				// ADD-SBU-TEXT-FONT-SIZE
 
 				String Actualtextsize = AddSbuFunPage.AddSBUtext.getCssValue("font-size");
 
 				String Expectedtextsize = "16px";
 				System.out.println("font size :" + Actualtextsize);
-				testCase = extent.createTest("ADD-SBU-TEXT-FONT-SIZE");
+				testCase = extent.createTest("30.ADD-SBU-TEXT-FONT-SIZE");
 				try {
 					Assert.assertEquals(Actualtextsize, Expectedtextsize);
 					testCase.log(Status.INFO, "Actual font size:- " + Actualtextsize);
@@ -763,13 +782,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong font size");
 				}
 
-				// text font style
+				// ADD-SBU-TEXT-FONT-STYLE
 
 				String Actualtextstyle = AddSbuFunPage.AddSBUtext.getCssValue("font-style");
 
 				String Expectedtextstyle = "normal";
 				System.out.println("font style :" + Actualtextstyle);
-				testCase = extent.createTest("ADD-SBU-TEXT-FONT-STYLE");
+				testCase = extent.createTest("31.ADD-SBU-TEXT-FONT-STYLE");
 				try {
 					Assert.assertEquals(Actualtextstyle, Expectedtextstyle);
 					testCase.log(Status.INFO, "Actual font style:- " + Actualtextstyle);
@@ -781,13 +800,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong font style");
 				}
 
-				// text spelling
+				// ADD-SBU-TEXT-SPELLING
 
 				String Actualtext = AddSbuFunPage.AddSBUtext.getText();
 
 				String Expectedtext = "Add SBU";
 				System.out.println("text :" + Actualtext);
-				testCase = extent.createTest("ADD-SBU-TEXT");
+				testCase = extent.createTest("32.ADD-SBU-TEXT-SPELLING");
 				try {
 					Assert.assertEquals(Actualtext, Expectedtext);
 					testCase.log(Status.INFO, "Actual text:- " + Actualtext);
@@ -799,13 +818,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong font text");
 				}
 
-				// text font family
+				// ADD-SBU-TEXT-FONT-FAMILY
 
 				String Actualfontfamily = AddSbuFunPage.AddSBUtext.getCssValue("font-family");
 
 				String Expectedfontfamily = "Roboto, sans-serif";
 				System.out.println("text :" + Actualfontfamily);
-				testCase = extent.createTest("ADD-SBU-TEXT-FONT-FAMILY");
+				testCase = extent.createTest("33.ADD-SBU-TEXT-FONT-FAMILY");
 				try {
 					Assert.assertEquals(Actualfontfamily, Expectedfontfamily);
 					testCase.log(Status.INFO, "Actual fontfamily:- " + Actualfontfamily);
@@ -817,7 +836,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong font fontfamily");
 				}
 
-				// text position
+				// ADD-SBU-TEXT-POSITION
 
 				Point ActulaTitleLocation = AddSbuFunPage.AddSBUtext.getLocation();
 				int actual_x = ActulaTitleLocation.getX();
@@ -828,7 +847,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 				Point ExpectedTitleLocation = new Point(397, 106);
 
-				testCase = extent.createTest("ADD-SBU-TEXT-POSITION");
+				testCase = extent.createTest("34.ADD-SBU-TEXT-POSITION");
 				try {
 					Assert.assertEquals(ActulaTitleLocation, ExpectedTitleLocation);
 					testCase.log(Status.INFO, "Actual TitleLocation:- " + ActulaTitleLocation);
@@ -840,13 +859,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong TitleLocation");
 				}
 
-				// padding
+				//ADD-SBU-TEXT-PADDING
 
 				String Actualpadding = AddSbuFunPage.AddSBUtext.getCssValue("padding");
 
 				String Expectedpadding = "0px";
 				System.out.println("padding :" + Actualpadding);
-				testCase = extent.createTest("ADD-SBU-TEXT-PADDING");
+				testCase = extent.createTest("35.ADD-SBU-TEXT-PADDING");
 				try {
 					Assert.assertEquals(Actualpadding, Expectedpadding);
 					testCase.log(Status.INFO, "Actual padding:- " + Actualpadding);
@@ -858,13 +877,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong padding");
 				}
 
-				// text margin
+				// ADD-SBU-TEXT-MARGIN
 
 				String Actualmargin = AddSbuFunPage.AddSBUtext.getCssValue("margin");
 
 				String Expectedmargin = "0px 0px 16px";
 				System.out.println("margin :" + Actualmargin);
-				testCase = extent.createTest("ADD-SBU-TEXT-MARGIN");
+				testCase = extent.createTest("36.ADD-SBU-TEXT-MARGIN");
 				try {
 					Assert.assertEquals(Actualmargin, Expectedmargin);
 					testCase.log(Status.INFO, "Actual padding:- " + Actualmargin);
@@ -876,13 +895,13 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong padding");
 				}
 
-				// text box shadow
+				// ADD-SUB-TEXT-SHADOW
 
 				String Actualshadow = AddSbuFunPage.AddSBUtext.getCssValue("box-shadow");
 
 				String Expectedshadow = "none";
 				System.out.println("shadow :" + Actualshadow);
-				testCase = extent.createTest("ADD-SUB-TEXT-SHADOW");
+				testCase = extent.createTest("37.ADD-SUB-TEXT-SHADOW");
 				try {
 					Assert.assertEquals(Actualshadow, Expectedshadow);
 					testCase.log(Status.INFO, "Actual shadow:- " + Actualshadow);
@@ -894,7 +913,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong shadow");
 				}
 
-				// LETTER SPACING
+				// ADD-SBU-TEXT-LETTER-SPACING
 
 				String ActualLetterSpacing = AddSbuFunPage.AddSBUtext.getCssValue("letter-spacing");
 				System.out.println("Letter Spacing :" + ActualLetterSpacing);
@@ -902,7 +921,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedLetterSpacing = "normal";
 
 				boolean letterspacing = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-LETTER-SPACING");
+				testCase = extent.createTest("38.ADD-SBU-TEXT-LETTER-SPACING");
 				try {
 					AssertJUnit.assertEquals(ActualLetterSpacing, ExpectedLetterSpacing);
 
@@ -919,7 +938,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "Letter spacing is not as expected");
 				}
 
-				// WORD SPACING
+				// ADD-SBU-TEXT-WORD-SPACING
 
 				String ActualWordSpacing = AddSbuFunPage.AddSBUtext.getCssValue("word-spacing");
 				System.out.println("Word Spacing :" + ActualWordSpacing);
@@ -927,7 +946,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedWordSpacing = "0px";
 
 				boolean wordspacing = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-WORD-SPACING");
+				testCase = extent.createTest("39.ADD-SBU-TEXT-WORD-SPACING");
 				try {
 					AssertJUnit.assertEquals(ActualWordSpacing, ExpectedWordSpacing);
 
@@ -944,7 +963,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "Word spacing is not as expected");
 				}
 
-				// ALIGNMENT (CENTER/LEFT/RIGHT)
+				// ADD-SBU-TEXT-ALIGNMENT (CENTER/LEFT/RIGHT)
 
 				String ActualAlignment = AddSbuFunPage.AddSBUtext.getCssValue("text-align");
 				System.out.println("Text Alignment :" + ActualAlignment);
@@ -952,7 +971,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedAlignment = "start";
 
 				boolean alignment = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-ALIGNMENT");
+				testCase = extent.createTest("40.ADD-SBU-TEXT-ALIGNMENT");
 				try {
 					AssertJUnit.assertEquals(ActualAlignment, ExpectedAlignment);
 
@@ -968,7 +987,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.INFO, "ExpectedAlignment :- " + ExpectedAlignment);
 					testCase.log(Status.FAIL, "Alignment is not as expected");
 				}
-				// TEXT TRANSFORMATION (UPERCASE/ LOWECASE)
+				// ADD-SBU-TEXT-TRANSFORMATION (UPERCASE/ LOWECASE)
 
 				String ActualTextTransformation = AddSbuFunPage.AddSBUtext.getCssValue("text-transform");
 				System.out.println("Text Transformation :" + ActualTextTransformation);
@@ -976,7 +995,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedTextTransformation = "none";
 
 				boolean texttransformation = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-TRANSFORMATION");
+				testCase = extent.createTest("41.ADD-SBU-TEXT-TRANSFORMATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextTransformation, ExpectedTextTransformation);
 
@@ -993,7 +1012,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "Transformation unexpected");
 				}
 
-				// LINE HEIGHT
+				// ADD-SBU-TEXT-LINE-HEIGHT
 
 				String ActualLineHeight = AddSbuFunPage.AddSBUtext.getCssValue("line-height");
 				System.out.println("Line Height :" + ActualLineHeight);
@@ -1001,7 +1020,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedLineHeight = "22px";
 
 				boolean lineheight = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-LINE-HEIGHT");
+				testCase = extent.createTest("42.ADD-SBU-TEXT-LINE-HEIGHT");
 				try {
 					AssertJUnit.assertEquals(ActualLineHeight, ExpectedLineHeight);
 
@@ -1018,7 +1037,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "Line height is not as expected");
 				}
 
-				// Text Decoration
+				// ADD-SBU-TEXT-DECORATION
 
 				String ActualTextDecoration = AddSbuFunPage.AddSBUtext.getCssValue("text-decoration");
 				System.out.println("Text Decoration :" + ActualTextDecoration);
@@ -1026,7 +1045,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedTextDecoration = "none solid rgb(255, 255, 255)";
 
 				boolean textdecoration = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-DECORATION");
+				testCase = extent.createTest("43.ADD-SBU-TEXT-DECORATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextDecoration, ExpectedTextDecoration);
 
@@ -1043,7 +1062,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "Text decoration is not as expected");
 				}
 
-				// VERTICAL ALIGN
+				//ADD-SBU-TEXT-VERTICAL-ALIGNMENT 
 
 				String actualVerticalAlignment = AddSbuFunPage.AddSBUtext.getCssValue("vertical-align");
 				System.out.println("Actual Vertical Alignment: " + actualVerticalAlignment);
@@ -1051,7 +1070,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String expectedVerticalAlignment = "baseline";
 
 				boolean verticalAlignment = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-VERTICAL-ALIGNMENT");
+				testCase = extent.createTest("44.ADD-SBU-TEXT-VERTICAL-ALIGNMENT");
 				try {
 					Assert.assertEquals(actualVerticalAlignment, expectedVerticalAlignment);
 				} catch (AssertionError e) {
@@ -1070,7 +1089,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 				}
 
-				// TEXT INDENT (To indent is to begin text with a blank space between it and the
+				// ADD-SBU-TEXT-INDENT(To indent is to begin text with a blank space between it and the
 				// margin)
 
 				String ActualTextIndent = AddSbuFunPage.AddSBUtext.getCssValue("text-indent");
@@ -1079,7 +1098,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedTextIndent = "0px";
 
 				boolean textindent = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-INDENT");
+				testCase = extent.createTest("45.ADD-SBU-TEXT-INDENT");
 				try {
 					AssertJUnit.assertEquals(ActualTextIndent, ExpectedTextIndent);
 
@@ -1097,7 +1116,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "Text Indent is as expected");
 
 				}
-				// TEXT - ORIENTATION(text characters in a line. It only affects text in
+				// ADD-SBU-TEXT-ORIENTATION(text characters in a line. It only affects text in
 				// vertical mode)
 
 				String ActualTextOrientation = AddSbuFunPage.AddSBUtext.getCssValue("text-orientation");
@@ -1106,7 +1125,7 @@ public class AddSbuUITest extends DriverIntialization {
 				String ExpectedTextOrientation = "mixed";
 
 				boolean textorientation = true;
-				testCase = extent.createTest("ADD-SBU-TEXT-ORIENTATION");
+				testCase = extent.createTest("46.ADD-SBU-TEXT-ORIENTATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextOrientation, ExpectedTextOrientation);
 
@@ -1139,6 +1158,8 @@ public class AddSbuUITest extends DriverIntialization {
 	}
 	// STEP-6 -- THIS METHOD IS FOR ADD DATA
 		public static void sbudata() throws IOException, InterruptedException {
+//			testCase = extent.createTest("STEP-6 -- THIS METHOD IS FOR ADD DATA");
+
 			AddSbuFunPage AddSbuFunpg = new AddSbuFunPage();
 			PageFactory.initElements(driver, AddSbuFunpg);
 
@@ -1168,20 +1189,27 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 //*********************************************************************************************************
 
-	//STEP-7 THIS METHOD IS FOR ADD-SBU-TEXT
+	//STEP-7 THIS METHOD IS FOR ADD-SBU-TEXT UI PROPERTIES(SBU-TEXT-DISPLAYED,SBU-TEXT-FONT-COLOUR,SBU-TEXT-FONT-SIZE
+	//SBU-TEXT-FONT-STYLE,SBU-TEXT-SPELLING,SBU-TEXT-FONT-FAMILY,SBU-TEXT-POSITION,SBU-TEXT-PADDING,SBU-TEXT-MARGIN
+	// SBU-TEXT-SHADOW,SBU-TEXT-LETTER-SPACING,SBU-TEXT-ALIGNMENT,SBU-TEXT-TRANSFORMATION,SBU-TEXT-LINE-HEIGHT,SBU-TEXT-DECORATION
+	//SBU-TEXT-VERTICAL-ALIGNMENT,SBU-TEXT-INDENT,SUB-TEXT-ORIENTATION)
 	
 	public static void sbutext() throws InterruptedException {
+		testCase = extent.createTest("STEP-7 THIS METHOD IS FOR ADD-SBU-TEXT UI PROPERTIES(SBU-TEXT-DISPLAYED,SBU-TEXT-FONT-COLOUR,SBU-TEXT-FONT-SIZE\r\n"
+				+ "	SBU-TEXT-FONT-STYLE,SBU-TEXT-SPELLING,SBU-TEXT-FONT-FAMILY,SBU-TEXT-POSITION,SBU-TEXT-PADDING,SBU-TEXT-MARGIN\r\n"
+				+ "SBU-TEXT-SHADOW,SBU-TEXT-LETTER-SPACING,SBU-TEXT-ALIGNMENT,SBU-TEXT-TRANSFORMATION,SBU-TEXT-LINE-HEIGHT,SBU-TEXT-DECORATION\r\n"
+				+ "SBU-TEXT-VERTICAL-ALIGNMENT,SBU-TEXT-INDENT,SUB-TEXT-ORIENTATION)");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
 		try {
 			if (AddSbuFunPage.SBUText.isDisplayed()) {
 
-//								Text Displayed
+//	SBU-TEXT-DISPLAYED
 
 				boolean ActualTextDisplay = AddSbuFunPage.SBUText.isDisplayed();
 				boolean ExpectedTestDisplay = true;
-				testCase = extent.createTest("SBU-TEXT-DISPLAYED");
+				testCase = extent.createTest("47.SBU-TEXT-DISPLAYED");
 				try {
 					Assert.assertEquals(ActualTextDisplay, ExpectedTestDisplay);
 					testCase.log(Status.INFO, "Actual text Displayed :- " + ActualTextDisplay);
@@ -1193,13 +1221,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, " text is not displayed ");
 				}
 
-				// text font color
+				// SBU-TEXT-FONT-COLOUR
 
 				String Actualtextcolor = AddSbuFunPage.SBUText.getCssValue("font-color");
 
 				String Expectedtextcolor = "";
 				System.out.println("font colour :" + Actualtextcolor);
-				testCase = extent.createTest("SBU-TEXT-FONT-COLOUR");
+				testCase = extent.createTest("48.SBU-TEXT-FONT-COLOUR");
 				try {
 					Assert.assertEquals(Actualtextcolor, Expectedtextcolor);
 					testCase.log(Status.INFO, "Actual font colour:- " + Actualtextcolor);
@@ -1211,13 +1239,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong font colour");
 				}
 
-				// text font size
+				// SBU-TEXT-FONT-SIZE
 
 				String Actualtextsize = AddSbuFunPage.SBUText.getCssValue("font-size");
 
 				String Expectedtextsize = "14px";
 				System.out.println("font size :" + Actualtextsize);
-				testCase = extent.createTest("SBU-TEXT-FONT-SIZE");
+				testCase = extent.createTest("49.SBU-TEXT-FONT-SIZE");
 				try {
 					Assert.assertEquals(Actualtextsize, Expectedtextsize);
 					testCase.log(Status.INFO, "Actual font size:- " + Actualtextsize);
@@ -1229,13 +1257,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong font size");
 				}
 
-				// text font style
+				// SBU-TEXT-FONT-STYLE
 
 				String Actualtextstyle = AddSbuFunPage.SBUText.getCssValue("font-style");
 
 				String Expectedtextstyle = "normal";
 				System.out.println("font style :" + Actualtextstyle);
-				testCase = extent.createTest("SBU-TEXT-FONT-STYLE");
+				testCase = extent.createTest("50.SBU-TEXT-FONT-STYLE");
 				try {
 					Assert.assertEquals(Actualtextstyle, Expectedtextstyle);
 					testCase.log(Status.INFO, "Actual font style:- " + Actualtextstyle);
@@ -1247,13 +1275,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong font style");
 				}
 
-				// text spelling
+				//SBU-TEXT-SPELLING
 
 				String Actualtext = AddSbuFunPage.SBUText.getText();
 
 				String Expectedtext = "Sub Business Unit:";
 				System.out.println("text :" + Actualtext);
-				testCase = extent.createTest("SBU-TEXT");
+				testCase = extent.createTest("51.SBU-TEXT-SPELLING");
 				try {
 					Assert.assertEquals(Actualtext, Expectedtext);
 					testCase.log(Status.INFO, "Actual text:- " + Actualtext);
@@ -1265,13 +1293,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong font text");
 				}
 
-				// text font family
+				//SBU-TEXT-FONT-FAMILY
 
 				String Actualfontfamily = AddSbuFunPage.SBUText.getCssValue("font-family");
 
 				String Expectedfontfamily = "Roboto";
 				System.out.println("text :" + Actualfontfamily);
-				testCase = extent.createTest("SBU-TEXT-FONT-FAMILY");
+				testCase = extent.createTest("52.SBU-TEXT-FONT-FAMILY");
 				try {
 					Assert.assertEquals(Actualfontfamily, Expectedfontfamily);
 					testCase.log(Status.INFO, "Actual fontfamily:- " + Actualfontfamily);
@@ -1283,7 +1311,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong font fontfamily");
 				}
 
-				// text position
+				//SBU-TEXT-POSITION
 
 				Point ActulaTitleLocation = AddSbuFunPage.SBUText.getLocation();
 				int actual_x = ActulaTitleLocation.getX();
@@ -1294,7 +1322,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				Point ExpectedTitleLocation = new Point(417, 167);
 
-				testCase = extent.createTest("SBU-TEXT-POSITION");
+				testCase = extent.createTest("53.SBU-TEXT-POSITION");
 				try {
 					Assert.assertEquals(ActulaTitleLocation, ExpectedTitleLocation);
 					testCase.log(Status.INFO, "Actual TitleLocation:- " + ActulaTitleLocation);
@@ -1306,13 +1334,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong TitleLocation");
 				}
 
-				// padding
+				//SBU-TEXT-PADDING
 
 				String Actualpadding = AddSbuFunPage.SBUText.getCssValue("padding");
 
 				String Expectedpadding = "0px";
 				System.out.println("padding :" + Actualpadding);
-				testCase = extent.createTest("SBU-TEXT-PADDING");
+				testCase = extent.createTest("54.SBU-TEXT-PADDING");
 				try {
 					Assert.assertEquals(Actualpadding, Expectedpadding);
 					testCase.log(Status.INFO, "Actual padding:- " + Actualpadding);
@@ -1324,13 +1352,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong padding");
 				}
 
-				// text margin
+				// SBU-TEXT-MARGIN
 
 				String Actualmargin = AddSbuFunPage.SBUText.getCssValue("margin");
 
 				String Expectedmargin = "0px";
 				System.out.println("margin :" + Actualmargin);
-				testCase = extent.createTest("SBU-TEXT-MARGIN");
+				testCase = extent.createTest("55.SBU-TEXT-MARGIN");
 				try {
 					Assert.assertEquals(Actualmargin, Expectedmargin);
 					testCase.log(Status.INFO, "Actual padding:- " + Actualmargin);
@@ -1342,13 +1370,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong padding");
 				}
 
-				// text box shadow
+				//SBU-TEXT-SHADOW
 
 				String Actualshadow = AddSbuFunPage.SBUText.getCssValue("box-shadow");
 
 				String Expectedshadow = "none";
 				System.out.println("shadow :" + Actualshadow);
-				testCase = extent.createTest("SBU-TEXT-SHADOW");
+				testCase = extent.createTest("56.SBU-TEXT-SHADOW");
 				try {
 					Assert.assertEquals(Actualshadow, Expectedshadow);
 					testCase.log(Status.INFO, "Actual shadow:- " + Actualshadow);
@@ -1360,7 +1388,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "wrong shadow");
 				}
 
-				// LETTER SPACING
+				// SBU-TEXT-LETTER-SPACING
 
 				String ActualLetterSpacing = AddSbuFunPage.SBUText.getCssValue("letter-spacing");
 				System.out.println("Letter Spacing :" + ActualLetterSpacing);
@@ -1368,7 +1396,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedLetterSpacing = "normal";
 
 				boolean letterspacing = true;
-				testCase = extent.createTest("SBU-TEXT-LETTER-SPACING");
+				testCase = extent.createTest("57.SBU-TEXT-LETTER-SPACING");
 				try {
 					AssertJUnit.assertEquals(ActualLetterSpacing, ExpectedLetterSpacing);
 
@@ -1385,7 +1413,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "Letter spacing is not as expected");
 				}
 
-				// WORD SPACING
+				// SBU-TEXT-WORD-SPACING
 
 				String ActualWordSpacing = AddSbuFunPage.SBUText.getCssValue("word-spacing");
 				System.out.println("Word Spacing :" + ActualWordSpacing);
@@ -1393,7 +1421,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedWordSpacing = "0px";
 
 				boolean wordspacing = true;
-				testCase = extent.createTest("SBU-TEXT-WORD-SPACING");
+				testCase = extent.createTest("58.SBU-TEXT-WORD-SPACING");
 				try {
 					AssertJUnit.assertEquals(ActualWordSpacing, ExpectedWordSpacing);
 
@@ -1410,7 +1438,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "Word spacing is not as expected");
 				}
 
-				// ALIGNMENT (CENTER/LEFT/RIGHT)
+				//SBU-TEXT-ALIGNMENT (CENTER/LEFT/RIGHT)
 
 				String ActualAlignment = AddSbuFunPage.SBUText.getCssValue("text-align");
 				System.out.println("Text Alignment :" + ActualAlignment);
@@ -1418,7 +1446,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedAlignment = "left";
 
 				boolean alignment = true;
-				testCase = extent.createTest("SBU-TEXT-ALIGNMENT");
+				testCase = extent.createTest("59.SBU-TEXT-ALIGNMENT");
 				try {
 					AssertJUnit.assertEquals(ActualAlignment, ExpectedAlignment);
 
@@ -1434,7 +1462,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.INFO, "ExpectedAlignment :- " + ExpectedAlignment);
 					testCase.log(Status.FAIL, "Alignment is not as expected");
 				}
-				// TEXT TRANSFORMATION (UPERCASE/ LOWECASE)
+				// SBU-TEXT-TRANSFORMATION (UPERCASE/ LOWECASE)
 
 				String ActualTextTransformation = AddSbuFunPage.SBUText.getCssValue("text-transform");
 				System.out.println("Text Transformation :" + ActualTextTransformation);
@@ -1442,7 +1470,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextTransformation = "none";
 
 				boolean texttransformation = true;
-				testCase = extent.createTest("SBU-TEXT-TRANSFORMATION");
+				testCase = extent.createTest("60.SBU-TEXT-TRANSFORMATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextTransformation, ExpectedTextTransformation);
 
@@ -1459,7 +1487,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "Transformation unexpected");
 				}
 
-				// LINE HEIGHT
+				//SBU-TEXT-LINE-HEIGHT
 
 				String ActualLineHeight = AddSbuFunPage.SBUText.getCssValue("line-height");
 				System.out.println("Line Height :" + ActualLineHeight);
@@ -1467,7 +1495,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedLineHeight = "22.001px";
 
 				boolean lineheight = true;
-				testCase = extent.createTest("SBU-TEXT-LINE-HEIGHT");
+				testCase = extent.createTest("61.SBU-TEXT-LINE-HEIGHT");
 				try {
 					AssertJUnit.assertEquals(ActualLineHeight, ExpectedLineHeight);
 
@@ -1484,7 +1512,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "Line height is not as expected");
 				}
 
-				// Text Decoration
+				//SBU-TEXT-DECORATION
 
 				String ActualTextDecoration = AddSbuFunPage.SBUText.getCssValue("text-decoration");
 				System.out.println("Text Decoration :" + ActualTextDecoration);
@@ -1492,7 +1520,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextDecoration = "none solid rgb(142, 142, 142)";
 
 				boolean textdecoration = true;
-				testCase = extent.createTest("SBU-TEXT-DECORATION");
+				testCase = extent.createTest("62.SBU-TEXT-DECORATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextDecoration, ExpectedTextDecoration);
 
@@ -1509,7 +1537,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "Text decoration is not as expected");
 				}
 
-				// VERTICAL ALIGN
+				// SBU-TEXT-VERTICAL-ALIGNMENT
 
 				String actualVerticalAlignment = AddSbuFunPage.SBUText.getCssValue("vertical-align");
 				System.out.println("Actual Vertical Alignment: " + actualVerticalAlignment);
@@ -1517,7 +1545,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String expectedVerticalAlignment = "baseline";
 
 				boolean verticalAlignment = true;
-				testCase = extent.createTest("SBU-TEXT-VERTICAL-ALIGNMENT");
+				testCase = extent.createTest("63.SBU-TEXT-VERTICAL-ALIGNMENT");
 				try {
 					Assert.assertEquals(actualVerticalAlignment, expectedVerticalAlignment);
 				} catch (AssertionError e) {
@@ -1536,7 +1564,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				}
 
-				// TEXT INDENT (To indent is to begin text with a blank space between it and the
+				// SBU-TEXT-INDENT (To indent is to begin text with a blank space between it and the
 				// margin)
 
 				String ActualTextIndent = AddSbuFunPage.SBUText.getCssValue("text-indent");
@@ -1545,7 +1573,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextIndent = "0px";
 
 				boolean textindent = true;
-				testCase = extent.createTest("SBU-TEXT-INDENT");
+				testCase = extent.createTest("64.SBU-TEXT-INDENT");
 				try {
 					AssertJUnit.assertEquals(ActualTextIndent, ExpectedTextIndent);
 
@@ -1563,7 +1591,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 					testCase.log(Status.FAIL, "Text Indent is as expected");
 
 				}
-				// TEXT - ORIENTATION(text characters in a line. It only affects text in
+				// SUB-TEXT-ORIENTATION(text characters in a line. It only affects text in
 				// vertical mode)
 
 				String ActualTextOrientation = AddSbuFunPage.SBUText.getCssValue("text-orientation");
@@ -1572,7 +1600,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextOrientation = "mixed";
 
 				boolean textorientation = true;
-				testCase = extent.createTest("SUB-TEXT-ORIENTATION");
+				testCase = extent.createTest("65.SUB-TEXT-ORIENTATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextOrientation, ExpectedTextOrientation);
 
@@ -1604,7 +1632,10 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 	}
 //***************************************************************************************
-	//STEP-8 THIS METHOD IS FOR DESCRIPTION TEXT 
+	//STEP-8 THIS METHOD IS FOR DESCRIPTION TEXT UI PROPERTIES((SBU-DESCRIPTION-DISPLAYED,SBU-DESCRIPTION-FONT-COLOUR,SBU-DESCRIPTION-FONT-SIZE
+	//SBU-DESCRIPTION-FONT-STYLE,SBU-DESCRIPTION-SPELLING,SBU-DESCRIPTION-FONT-FAMILY,SBU-DESCRIPTION-POSITION,SBU-DESCRIPTION-PADDING,SBU-DESCRIPTION-MARGIN
+	// SBU-DESCRIPTION-SHADOW,SBU-DESCRIPTION-LETTER-SPACING,SBU-DESCRIPTION-ALIGNMENT,SBU-DESCRIPTION-TRANSFORMATION,SBU-DESCRIPTION-LINE-HEIGHT,SBU-DESCRIPTION-DECORATION
+	//SBU-DESCRIPTION-VERTICAL-ALIGNMENT,SBU-DESCRIPTION-INDENT,SUB-DESCRIPTION-ORIENTATION)) 
 	
 	public static void description() throws InterruptedException {
 		AddSbuFunPage sbuui = new AddSbuFunPage();
@@ -1617,7 +1648,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				boolean ActualTextDisplay = AddSbuFunPage.DescriptionText.isDisplayed();
 				boolean ExpectedTestDisplay = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-DISPLAYED");
+				testCase = extent.createTest("66.DESCRIPTION-TEXT-DISPLAYED");
 				try {
 					Assert.assertEquals(ActualTextDisplay, ExpectedTestDisplay);
 					testCase.log(Status.INFO, "Actual text Displayed :- " + ActualTextDisplay);
@@ -1635,7 +1666,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedtextcolor = "";
 				System.out.println("font colour :" + Actualtextcolor);
-				testCase = extent.createTest("DESCRIPTION-TEXT-FONT-COLOUR");
+				testCase = extent.createTest("67.DESCRIPTION-TEXT-FONT-COLOUR");
 				try {
 					Assert.assertEquals(Actualtextcolor, Expectedtextcolor);
 					testCase.log(Status.INFO, "Actual font colour:- " + Actualtextcolor);
@@ -1653,7 +1684,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedtextsize = "14px";
 				System.out.println("font size :" + Actualtextsize);
-				testCase = extent.createTest("DESCRIPTION-TEXT-FONT-SIZE");
+				testCase = extent.createTest("68.DESCRIPTION-TEXT-FONT-SIZE");
 				try {
 					Assert.assertEquals(Actualtextsize, Expectedtextsize);
 					testCase.log(Status.INFO, "Actual font size:- " + Actualtextsize);
@@ -1671,7 +1702,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedtextstyle = "normal";
 				System.out.println("font style :" + Actualtextstyle);
-				testCase = extent.createTest("DESCRIPTION-TEXT-FONT-STYLE");
+				testCase = extent.createTest("69.DESCRIPTION-TEXT-FONT-STYLE");
 				try {
 					Assert.assertEquals(Actualtextstyle, Expectedtextstyle);
 					testCase.log(Status.INFO, "Actual font style:- " + Actualtextstyle);
@@ -1689,7 +1720,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedtext = "Description:";
 				System.out.println("text :" + Actualtext);
-				testCase = extent.createTest("DESCRIPTION-TEXT");
+				testCase = extent.createTest("70.DESCRIPTION-TEXT");
 				try {
 					Assert.assertEquals(Actualtext, Expectedtext);
 					testCase.log(Status.INFO, "Actual text:- " + Actualtext);
@@ -1707,7 +1738,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedfontfamily = "Roboto";
 				System.out.println("text :" + Actualfontfamily);
-				testCase = extent.createTest("DESCRIPTION-TEXT-FONT-FAMILY");
+				testCase = extent.createTest("71.DESCRIPTION-TEXT-FONT-FAMILY");
 				try {
 					Assert.assertEquals(Actualfontfamily, Expectedfontfamily);
 					testCase.log(Status.INFO, "Actual fontfamily:- " + Actualfontfamily);
@@ -1730,7 +1761,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				Point ExpectedTitleLocation = new Point(693, 167);
 
-				testCase = extent.createTest("DESCRIPTION-TEXT-POSITION");
+				testCase = extent.createTest("72.DESCRIPTION-TEXT-POSITION");
 				try {
 					Assert.assertEquals(ActulaTitleLocation, ExpectedTitleLocation);
 					testCase.log(Status.INFO, "Actual TitleLocation:- " + ActulaTitleLocation);
@@ -1748,7 +1779,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedpadding = "0px";
 				System.out.println("padding :" + Actualpadding);
-				testCase = extent.createTest("DESCRIPTION-TEXT-PADDING");
+				testCase = extent.createTest("73.DESCRIPTION-TEXT-PADDING");
 				try {
 					Assert.assertEquals(Actualpadding, Expectedpadding);
 					testCase.log(Status.INFO, "Actual padding:- " + Actualpadding);
@@ -1766,7 +1797,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedmargin = "0px";
 				System.out.println("margin :" + Actualmargin);
-				testCase = extent.createTest("DESCRIPTION-TEXT-MARGIN");
+				testCase = extent.createTest("74.DESCRIPTION-TEXT-MARGIN");
 				try {
 					Assert.assertEquals(Actualmargin, Expectedmargin);
 					testCase.log(Status.INFO, "Actual padding:- " + Actualmargin);
@@ -1784,7 +1815,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				String Expectedshadow = "none";
 				System.out.println("shadow :" + Actualshadow);
-				testCase = extent.createTest("DESCRIPTION-TEXT-SHADOW");
+				testCase = extent.createTest("75.DESCRIPTION-TEXT-SHADOW");
 				try {
 					Assert.assertEquals(Actualshadow, Expectedshadow);
 					testCase.log(Status.INFO, "Actual shadow:- " + Actualshadow);
@@ -1804,7 +1835,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedLetterSpacing = "normal";
 
 				boolean letterspacing = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-LETTER-SPACING");
+				testCase = extent.createTest("76.DESCRIPTION-TEXT-LETTER-SPACING");
 				try {
 					AssertJUnit.assertEquals(ActualLetterSpacing, ExpectedLetterSpacing);
 
@@ -1829,7 +1860,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedWordSpacing = "0px";
 
 				boolean wordspacing = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-WORD-SPACING");
+				testCase = extent.createTest("77.DESCRIPTION-TEXT-WORD-SPACING");
 				try {
 					AssertJUnit.assertEquals(ActualWordSpacing, ExpectedWordSpacing);
 
@@ -1854,7 +1885,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedAlignment = "left";
 
 				boolean alignment = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-ALIGNMENT");
+				testCase = extent.createTest("78.DESCRIPTION-TEXT-ALIGNMENT");
 				try {
 					AssertJUnit.assertEquals(ActualAlignment, ExpectedAlignment);
 
@@ -1878,7 +1909,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextTransformation = "none";
 
 				boolean texttransformation = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-TRANSFORMATION");
+				testCase = extent.createTest("79.DESCRIPTION-TEXT-TRANSFORMATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextTransformation, ExpectedTextTransformation);
 
@@ -1903,7 +1934,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedLineHeight = "22.001px";
 
 				boolean lineheight = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-LINE-HEIGHT");
+				testCase = extent.createTest("80.DESCRIPTION-TEXT-LINE-HEIGHT");
 				try {
 					AssertJUnit.assertEquals(ActualLineHeight, ExpectedLineHeight);
 
@@ -1928,7 +1959,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextDecoration = "none solid rgb(142, 142, 142)";
 
 				boolean textdecoration = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-DECORATION");
+				testCase = extent.createTest("81.DESCRIPTION-TEXT-DECORATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextDecoration, ExpectedTextDecoration);
 
@@ -1953,7 +1984,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String expectedVerticalAlignment = "baseline";
 
 				boolean verticalAlignment = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-VERTICAL-ALIGNMENT");
+				testCase = extent.createTest("82.DESCRIPTION-TEXT-VERTICAL-ALIGNMENT");
 				try {
 					Assert.assertEquals(actualVerticalAlignment, expectedVerticalAlignment);
 				} catch (AssertionError e) {
@@ -1981,7 +2012,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextIndent = "0px";
 
 				boolean textindent = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-INDENT");
+				testCase = extent.createTest("83.DESCRIPTION-TEXT-INDENT");
 				try {
 					AssertJUnit.assertEquals(ActualTextIndent, ExpectedTextIndent);
 
@@ -2008,7 +2039,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				String ExpectedTextOrientation = "mixed";
 
 				boolean textorientation = true;
-				testCase = extent.createTest("DESCRIPTION-TEXT-ORIENTATION");
+				testCase = extent.createTest("84.DESCRIPTION-TEXT-ORIENTATION");
 				try {
 					AssertJUnit.assertEquals(ActualTextOrientation, ExpectedTextOrientation);
 
@@ -2040,20 +2071,23 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 	}
 
-	//STEP-4  THIS METHOD IS FOR TEXTBOX
+	//STEP-5  THIS METHOD IS FOR TEXTBOX  UI PROPERTIES(SBU-TEXTBOX-DISPLAYED,.SBU-TEXTBOX-ENABLED,SBU-TEXTBOX-POSITION
+	// SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-FONT-COLOUR,SBU-TEXTBOX-FONT-SIZE,SBU-TEXTBOX-BORDER-COLOUR,SBU-TEXTBOX-SIZE)
 	
 	public static void sbutextbox() throws InterruptedException {
+		testCase = extent.createTest("STEP-5  THIS METHOD IS FOR TEXTBOX  UI PROPERTIES(SBU-TEXTBOX-DISPLAYED,.SBU-TEXTBOX-ENABLED,SBU-TEXTBOX-POSITION\r\n"
+				+ "SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-FONT-COLOUR,SBU-TEXTBOX-FONT-SIZE,SBU-TEXTBOX-BORDER-COLOUR,SBU-TEXTBOX-SIZE)");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
 		try {
 			if (AddSbuFunPage.SBUtextbox.isDisplayed()) {
 
-//							button Displayed
+//							SUB-TEXTBOX-DISPLAYED
 
 				boolean ActualbiuttonDisplay = AddSbuFunPage.SBUtextbox.isDisplayed();
 				boolean ExpectedbuttonDisplay = true;
-				testCase = extent.createTest("SUB-TEXTBOX-DISPLAYED");
+				testCase = extent.createTest("85.SBU-TEXTBOX-DISPLAYED");
 				try {
 					Assert.assertEquals(ActualbiuttonDisplay, ExpectedbuttonDisplay);
 					testCase.log(Status.INFO, "Actual Image Displayed :- " + ActualbiuttonDisplay);
@@ -2068,11 +2102,11 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 				try {
 					if (AddSbuFunPage.SBUtextbox.isEnabled()) {
 
-//									button enabled
+//									SBU-TEXTBOX-ENABLED
 
 						boolean ActualImageDisplay = AddSbuFunPage.SBUtextbox.isEnabled();
 						boolean ExpectedImageDisplay = true;
-						testCase = extent.createTest("SBU-TEXTBOX-ENABLED");
+						testCase = extent.createTest("86.SBU-TEXTBOX-ENABLED");
 						try {
 							Assert.assertEquals(ActualImageDisplay, ExpectedImageDisplay);
 							testCase.log(Status.INFO, "Actual Image Displayed :- " + ActualImageDisplay);
@@ -2084,11 +2118,11 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 							testCase.log(Status.FAIL, " Image Displayed is Wrong");
 						}
 
-						// Check Image Position
+						// SBU-TEXTBOX-POSITION
 						Point ExpectedImageLocation = new Point(417, 189);
 						Point actualImageLocation = AddSbuFunPage.SBUtextbox.getLocation();
 						System.out.println("Position :" + actualImageLocation);
-						testCase = extent.createTest("SBU-TEXTBOX-POSITION");
+						testCase = extent.createTest("87.SBU-TEXTBOX-POSITION");
 						try {
 							Thread.sleep(1000);
 							Assert.assertEquals(actualImageLocation, ExpectedImageLocation);
@@ -2104,13 +2138,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 							testCase.log(Status.FAIL, " Image Position Wrong");
 						}
 
-						// CHECK BACKGROUND COLOR
+						// SBU-TEXTBOX-BACKGROUND-COLOUR
 
 						String Actualbgcolor = AddSbuFunPage.SBUtextbox.getCssValue("background-color");
 
 						String Expectedbgcolour = "rgba(255, 255, 255, 1)";
 						System.out.println("text :" + Actualbgcolor);
-						testCase = extent.createTest("SBU-TEXTBOX-BACKGROUND-COLOUR");
+						testCase = extent.createTest("88.SBU-TEXTBOX-BACKGROUND-COLOUR");
 						try {
 							Assert.assertEquals(Actualbgcolor, Expectedbgcolour);
 							testCase.log(Status.INFO, "Actual bg colur:- " + Actualbgcolor);
@@ -2122,13 +2156,13 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 							testCase.log(Status.FAIL, "wrong bg colur");
 						}
 
-						// text font color
+						//SBU-TEXTBOX-FONT-COLOUR
 
 						String Actualtextcolor = AddSbuFunPage.SBUtextbox.getCssValue("font-color");
 
 						String Expectedtextcolor = "";
 						System.out.println("font colour :" + Actualtextcolor);
-						testCase = extent.createTest("SBU-TEXTBOX-FONT-COLOUR");
+						testCase = extent.createTest("89.SBU-TEXTBOX-FONT-COLOUR");
 						try {
 							Assert.assertEquals(Actualtextcolor, Expectedtextcolor);
 							testCase.log(Status.INFO, "Actual font colour:- " + Actualtextcolor);
@@ -2146,7 +2180,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						String Expectedtextsize = "14px";
 						System.out.println("font size :" + Actualtextsize);
-						testCase = extent.createTest("SBU-TEXTBOX-FONT-SIZE");
+						testCase = extent.createTest("90.SBU-TEXTBOX-FONT-SIZE");
 						try {
 							Assert.assertEquals(Actualtextsize, Expectedtextsize);
 							testCase.log(Status.INFO, "Actual font size:- " + Actualtextsize);
@@ -2164,7 +2198,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						String Expectedtextstyle = "normal";
 						System.out.println("font style :" + Actualtextstyle);
-						testCase = extent.createTest("SBU-TEXTBOX-FONT-STYLE");
+						testCase = extent.createTest("91.SBU-TEXTBOX-FONT-STYLE");
 						try {
 							Assert.assertEquals(Actualtextstyle, Expectedtextstyle);
 							testCase.log(Status.INFO, "Actual font style:- " + Actualtextstyle);
@@ -2182,7 +2216,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 						Dimension ExpectedSize = new Dimension(256, 32);
 
 						boolean size = true;
-						testCase = extent.createTest("SBU-TEXTBOX-SIZE");
+						testCase = extent.createTest("92.SBU-TEXTBOX-SIZE");
 						try {
 							AssertJUnit.assertEquals(ActualSize, ExpectedSize);
 						} catch (AssertionError e) {
@@ -2207,7 +2241,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						String Expectedbordercolour = "rgb(217, 217, 217)";
 						System.out.println("font style :" + Actualbordercolour);
-						testCase = extent.createTest("SBU-TEXTBOX-BORDER-COLOUR");
+						testCase = extent.createTest("93.SBU-TEXTBOX-BORDER-COLOUR");
 						try {
 							Assert.assertEquals(Actualbordercolour, Expectedbordercolour);
 							testCase.log(Status.INFO, "Actual border colour:- " + Actualbordercolour);
@@ -2243,9 +2277,14 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		System.out.println();
 	}
 
-	//STEP-7 THIS METHOD IS FOR DESCRIPTION TEXT BOX
+	//STEP-7 THIS METHOD IS FOR DESCRIPTION TEXT BOX UI PROPERTIES(DESCRIPTION-TEXTBOX-DISPLAYED,DESCRIPTION-TEXTBOX-ENABLED,DESCRIPTION-TEXTBOX-POSITION
+	// DESCRIPTION-TEXTBOX-POSITION,DESCRIPTION-TEXTBOX-BACKGROUND-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR
+	//DESCRIPTION-TEXTBOX-FONT-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE)
 	
 	public static void descriptiontextbox() throws InterruptedException {
+		testCase = extent.createTest("STEP-7 THIS METHOD IS FOR DESCRIPTION TEXT BOX UI PROPERTIES(DESCRIPTION-TEXTBOX-DISPLAYED,DESCRIPTION-TEXTBOX-ENABLED,DESCRIPTION-TEXTBOX-POSITION\r\n"
+				+ "DESCRIPTION-TEXTBOX-POSITION,DESCRIPTION-TEXTBOX-BACKGROUND-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR\r\n"
+				+ "DESCRIPTION-TEXTBOX-FONT-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE)");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
 
@@ -2256,7 +2295,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 				boolean ActualbiuttonDisplay = AddSbuFunPage.Descriptiontextbox.isDisplayed();
 				boolean ExpectedbuttonDisplay = true;
-				testCase = extent.createTest("DESCRIPTION-TEXTBOX-DISPLAYED");
+				testCase = extent.createTest("94.DESCRIPTION-TEXTBOX-DISPLAYED");
 				try {
 					Assert.assertEquals(ActualbiuttonDisplay, ExpectedbuttonDisplay);
 					testCase.log(Status.INFO, "Actual Image Displayed :- " + ActualbiuttonDisplay);
@@ -2275,7 +2314,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						boolean ActualImageDisplay = AddSbuFunPage.Descriptiontextbox.isEnabled();
 						boolean ExpectedImageDisplay = true;
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-ENABLED");
+						testCase = extent.createTest("95.DESCRIPTION-TEXTBOX-ENABLED");
 						try {
 							Assert.assertEquals(ActualImageDisplay, ExpectedImageDisplay);
 							testCase.log(Status.INFO, "Actual Image Displayed :- " + ActualImageDisplay);
@@ -2291,7 +2330,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 						Point ExpectedImageLocation = new Point(693, 189);
 						Point actualImageLocation = AddSbuFunPage.Descriptiontextbox.getLocation();
 						System.out.println("Position :" + actualImageLocation);
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-POSITION");
+						testCase = extent.createTest("96.DESCRIPTION-TEXTBOX-POSITION");
 						try {
 							Thread.sleep(1000);
 							Assert.assertEquals(actualImageLocation, ExpectedImageLocation);
@@ -2313,7 +2352,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						String Expectedbgcolour = "rgba(255, 255, 255, 1)";
 						System.out.println("text :" + Actualbgcolor);
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-BACKGROUND-COLOUR");
+						testCase = extent.createTest("97.DESCRIPTION-TEXTBOX-BACKGROUND-COLOUR");
 						try {
 							Assert.assertEquals(Actualbgcolor, Expectedbgcolour);
 							testCase.log(Status.INFO, "Actual bg colur:- " + Actualbgcolor);
@@ -2331,7 +2370,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						String Expectedtextcolor = "";
 						System.out.println("font colour :" + Actualtextcolor);
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-FONT-COLOUR");
+						testCase = extent.createTest("98.DESCRIPTION-TEXTBOX-FONT-COLOUR");
 						try {
 							Assert.assertEquals(Actualtextcolor, Expectedtextcolor);
 							testCase.log(Status.INFO, "Actual font colour:- " + Actualtextcolor);
@@ -2349,7 +2388,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						String Expectedtextsize = "14px";
 						System.out.println("font size :" + Actualtextsize);
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-FONT-SIZE");
+						testCase = extent.createTest("99.DESCRIPTION-TEXTBOX-FONT-SIZE");
 						try {
 							Assert.assertEquals(Actualtextsize, Expectedtextsize);
 							testCase.log(Status.INFO, "Actual font size:- " + Actualtextsize);
@@ -2385,7 +2424,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 						Dimension ExpectedSize = new Dimension(256, 32);
 
 						boolean size = true;
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-SIZE");
+						testCase = extent.createTest("100.DESCRIPTION-TEXTBOX-SIZE");
 						try {
 							AssertJUnit.assertEquals(ActualSize, ExpectedSize);
 						} catch (AssertionError e) {
@@ -2410,7 +2449,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 						String Expectedbordercolour = "rgb(217, 217, 217)";
 						System.out.println("font style :" + Actualbordercolour);
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-BORDER-COLOUR");
+						testCase = extent.createTest("101.DESCRIPTION-TEXTBOX-BORDER-COLOUR");
 						try {
 							Assert.assertEquals(Actualbordercolour, Expectedbordercolour);
 							testCase.log(Status.INFO, "Actual border colour:- " + Actualbordercolour);
@@ -2423,7 +2462,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 						}
 
 					} else {
-						testCase = extent.createTest("DESCRIPTION-TEXTBOX-NOT-ENABLED");
+						testCase = extent.createTest("101.DESCRIPTION-TEXTBOX-NOT-ENABLED");
 						testCase.log(Status.INFO, "Image Not Displayed");
 						testCase.log(Status.FAIL, " Image Not Displayed");
 					}
@@ -2445,15 +2484,22 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		}
 		System.out.println();
 	}
-//	STEP-9  THIS METHOD IS FOR SAVE BUTTON PROPERTIES
+//	STEP-9  THIS METHOD IS FOR SAVE BUTTON PROPERTIES(ELEMENT-VISIBILITY,BUTTON-POSITION,FONT-SIZE,BUTTON-SIZE
+// BUTTON-ENABLE,BUTTON-COLOR,BORDER-COLOR,FONT-TYPE,SAVE-BUTTON-FONT-COLOUR,BORDER-COLOR,FONT-TYPE
+// SAVE-BUTTON-FONT-COLOUR,SAVE-BUTTON-CURSOR,SAVE BUTTON SPELLING,SAVE-BUTTON-PADDING,SAVE-BUTTON-RADIUS
+// SAVE-BUTTON-OPACITY,SAVE-BUTTON-FONT-WEIGHT	)
 	public static void SaveButtonUI() throws InterruptedException {
+		testCase = extent.createTest("STEP-9  THIS METHOD IS FOR SAVE BUTTON PROPERTIES(ELEMENT-VISIBILITY,BUTTON-POSITION,FONT-SIZE,BUTTON-SIZE\r\n"
+				+ "BUTTON-ENABLE,BUTTON-COLOR,BORDER-COLOR,FONT-TYPE,SAVE-BUTTON-FONT-COLOUR,BORDER-COLOR,FONT-TYPE\r\n"
+				+ "SAVE-BUTTON-FONT-COLOUR,SAVE-BUTTON-CURSOR,SAVE BUTTON SPELLING,SAVE-BUTTON-PADDING,SAVE-BUTTON-RADIUS\r\n"
+				+ "SAVE-BUTTON-OPACITY,SAVE-BUTTON-FONT-WEIGHT)");
 		// check if element visible
 
 		boolean ActualElement = AddSbuFunPage.SBUsavebutton.isDisplayed();
 		boolean ExpectedElement = true;
 
 		boolean visibility = true;
-		testCase = extent.createTest("ELEMENT-VISIBILITY");
+		testCase = extent.createTest("102.ELEMENT-VISIBILITY");
 		try {
 			AssertJUnit.assertEquals(ActualElement, ExpectedElement);
 
@@ -2489,7 +2535,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		Point ExpectedLocation = new Point(907, 288);
 
 		boolean Position = true;
-		testCase = extent.createTest("BUTTON-POSITION");
+		testCase = extent.createTest("103.BUTTON-POSITION");
 		try {
 			AssertJUnit.assertEquals(ActualLocation, ExpectedLocation);
 
@@ -2514,7 +2560,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String ExpectedFontSize = "14px";
 
 		boolean Fontsize = true;
-		testCase = extent.createTest("FONT-SIZE");
+		testCase = extent.createTest("104.FONT-SIZE");
 		try {
 			AssertJUnit.assertEquals(ActualFontSize, ExpectedFontSize);
 
@@ -2539,7 +2585,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		Dimension ExpectedSize = new Dimension(60, 32);
 
 		boolean size = true;
-		testCase = extent.createTest("BUTTON-SIZE");
+		testCase = extent.createTest("105.BUTTON-SIZE");
 		try {
 			AssertJUnit.assertEquals(ActualSize, ExpectedSize);
 
@@ -2563,7 +2609,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		boolean ExpectedElementEnable = true;
 
 		boolean enablity = true;
-		testCase = extent.createTest("BUTTON-ENABLE");
+		testCase = extent.createTest("106.BUTTON-ENABLE");
 		try {
 			AssertJUnit.assertEquals(ActualElementEnable, ExpectedElementEnable);
 
@@ -2589,7 +2635,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String ExpectedButtonColor = "rgba(0, 19, 40, 1)";
 
 		boolean buttoncolor = true;
-		testCase = extent.createTest("BUTTON-COLOR");
+		testCase = extent.createTest("107.BUTTON-COLOR");
 		try {
 			AssertJUnit.assertEquals(ActualButtonColor, ExpectedButtonColor);
 
@@ -2615,7 +2661,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String ExpectedBorderColor = " ";
 
 		boolean bordercolor = true;
-		testCase = extent.createTest("BORDER-COLOR");
+		testCase = extent.createTest("108.BORDER-COLOR");
 		try {
 			AssertJUnit.assertEquals(ActualBorderColor, ExpectedBorderColor);
 
@@ -2643,7 +2689,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		//input[@id='sub_business_unit']
 
 		boolean fonttype = true;
-		testCase = extent.createTest("FONT-TYPE");
+		testCase = extent.createTest("109.FONT-TYPE");
 		try {
 			AssertJUnit.assertEquals(ActualFontType, ExpectedFontType);
 
@@ -2668,7 +2714,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		System.out.println("Font colour: " + ActualFontColor);
 
 		String ExpectedFontColor = "rgba(255, 255, 255, 1)";
-		testCase = extent.createTest("LOGIN-BUTTON-FONT-COLOUR");
+		testCase = extent.createTest("110.SAVE-BUTTON-FONT-COLOUR");
 		try {
 			AssertJUnit.assertEquals(ActualFontColor, ExpectedFontColor);
 			testCase.log(Status.INFO, "ActualFontColor :- " + ActualFontColor);
@@ -2690,7 +2736,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String ExpectedActions = "pointer";
 
 		boolean cursor = true;
-		testCase = extent.createTest("007-LOGIN-BUTTON-CURSOR");
+		testCase = extent.createTest("111.SAVE-BUTTON-CURSOR");
 		try {
 			AssertJUnit.assertEquals(ActualActions, ExpectedActions);
 
@@ -2714,7 +2760,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 
 		String text1 = "Save";
 		boolean txt1 = true;
-		testCase = extent.createTest("SAVE BUTTON SPELLING");
+		testCase = extent.createTest("112.SAVE BUTTON SPELLING");
 
 		try {
 			AssertJUnit.assertEquals(text, text1);
@@ -2742,7 +2788,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String Expectedvalue = "4px 15px";
 
 		boolean padding = true;
-		testCase = extent.createTest("007-LOGIN-BUTTON-PADDING");
+		testCase = extent.createTest("113.SAVE-BUTTON-PADDING");
 		try {
 			AssertJUnit.assertEquals(Actualvalue, Expectedvalue);
 
@@ -2767,7 +2813,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String Expectedradius = "2px";
 
 		boolean radius = true;
-		testCase = extent.createTest("007-LOGIN-BUTTON-RADIUS");
+		testCase = extent.createTest("114.SAVE-BUTTON-RADIUS");
 		try {
 			AssertJUnit.assertEquals(Actualradius, Expectedradius);
 
@@ -2792,7 +2838,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String Expectedopacity = "1";
 
 		boolean opacity = true;
-		testCase = extent.createTest("007-LOGIN-BUTTON-OPACITY");
+		testCase = extent.createTest("115.SAVE-BUTTON-OPACITY");
 		try {
 			AssertJUnit.assertEquals(Actualopacity, Expectedopacity);
 
@@ -2817,7 +2863,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		String Expectedfontweight = "400";
 
 		boolean fontweight = true;
-		testCase = extent.createTest("007-LOGIN-BUTTON-FONT-WEIGHT");
+		testCase = extent.createTest("116.SAVE-BUTTON-FONT-WEIGHT");
 		try {
 			AssertJUnit.assertEquals(Actualfontweight, Expectedfontweight);
 
@@ -2846,7 +2892,7 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
 		AddSbuFunPage.SBUsavebutton.click();
 	}
 
-	//STEP-11 -- CHECK THE LAST ADD SBU VALUE
+	//STEP-11 -- CHECK THE LAST ADD SBU VALUE(LAST-ADDED-DATA)
 	public static  void checkLastAddvalue() throws InterruptedException, IOException {
         AddSbuFunPage addfunctionpg = new AddSbuFunPage();
 		PageFactory.initElements(driver, addfunctionpg);
@@ -2856,9 +2902,9 @@ AddSbuFunPage.SBUdestext.sendKeys("this is description");
         String actualdata = AddSbuFunPage.tableRow.getText();
         System.out.println("First row of table : " + actualdata);
         
-        String expecteddata ="Testing";
+        String expecteddata ="testing";
         boolean firstdata = true;
-        testCase = extent.createTest("041-LAST-ADDED-DATA");
+        testCase = extent.createTest("117.LAST-ADDED-DATA");
         try {
             AssertJUnit.assertEquals(actualdata, expecteddata);
         } catch (AssertionError e) {
