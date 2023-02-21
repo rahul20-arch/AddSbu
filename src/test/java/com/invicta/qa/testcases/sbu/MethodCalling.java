@@ -21,6 +21,7 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
 import com.invicta.qa.base.DriverIntialization;
 import com.invicta.qa.pages.login.Loginpg;
 import com.invicta.qa.pages.sbu.AddSbuFunPage;
@@ -60,7 +61,7 @@ public class MethodCalling extends DriverIntialization{
 		AddSbuUITest.descriptiontextbox();
 		//Thread.sleep(3000);
 		// // STEP-6 -- THIS METHOD IS FOR ADD DATA
-		AddSbuUITest.sbudata();
+		AddSbuUITest.sbudata("testing","testing");
 		//Thread.sleep(3000);
 		// STEP-7 THIS METHOD IS FOR ADD-SBU-TEXT UI PROPERTIES(SBU-TEXT-DISPLAYED,SBU-TEXT-FONT-COLOUR,SBU-TEXT-FONT-SIZE
 		//SBU-TEXT-FONT-STYLE,SBU-TEXT-SPELLING,SBU-TEXT-FONT-FAMILY,SBU-TEXT-POSITION,SBU-TEXT-PADDING,SBU-TEXT-MARGIN
@@ -79,11 +80,26 @@ public class MethodCalling extends DriverIntialization{
 		// SAVE-BUTTON-FONT-COLOUR,SAVE-BUTTON-CURSOR,SAVE BUTTON SPELLING,SAVE-BUTTON-PADDING,SAVE-BUTTON-RADIUS
 		// SAVE-BUTTON-OPACITY,SAVE-BUTTON-FONT-WEIGHT	
 		AddSbuUITest.SaveButtonUI();
-		//Thread.sleep(3000);
-		//STEP-10 --THIS METHOD IS FOR SAVE BUTTON FUNCTION
-		AddSbuUITest.clicksave();
-		//STEP-11 -- CHECK THE LAST ADD SBU VALUE(LAST-ADDED-DATA)
-		AddSbuUITest.checkLastAddvalue();
+		
+		String checkFirst = AddSbuFunPage.tableRow.getText();
+		System.out.println(checkFirst);
+		
+		if(checkFirst.equals("testing")) {
+			testCase = extent.createTest("Checking already exists");
+			//testCase.log(Status.INFO, "Already exists");
+			AddSbuUITest.clicksave();
+		}
+		else {
+			//Thread.sleep(3000);
+			//STEP-10 --THIS METHOD IS FOR SAVE BUTTON FUNCTION
+			AddSbuUITest.clicksave();
+			
+			
+			
+			//STEP-11 -- CHECK THE LAST ADD SBU VALUE(LAST-ADDED-DATA)
+			AddSbuUITest.checkLastAddvalue();
+		}
+		
 	}
 
 }

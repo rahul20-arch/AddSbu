@@ -1166,7 +1166,7 @@ public class AddSbuUITest extends DriverIntialization {
 
 	}
 	// STEP-6 -- THIS METHOD IS FOR ADD DATA
-		public static void sbudata() throws IOException, InterruptedException {
+		public static void sbudata(String SbuName, String SbuDescription) throws IOException, InterruptedException {
 //			testCase = extent.createTest("STEP-6 -- THIS METHOD IS FOR ADD DATA");
 
 			AddSbuFunPage AddSbuFunpg = new AddSbuFunPage();
@@ -1190,8 +1190,8 @@ public class AddSbuUITest extends DriverIntialization {
 //				AddSbuFunPage.SBUdestext.sendKeys(description);
 //
 //				AddSbuFunPage.SBUsavebutton.click();
-AddSbuFunPage.SBUtext.sendKeys("testing");
-AddSbuFunPage.SBUdestext.sendKeys("this is description");
+AddSbuFunPage.SBUtext.sendKeys(SbuName);
+AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 			}
 
 //		}

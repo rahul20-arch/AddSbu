@@ -60,7 +60,11 @@ public class AddSbuFunPage {
 //		public static WebElement SBUsavebutton;
 
 //xpath written by arunan anna		
-	@FindBy(xpath = "//div[@class=\"ant-modal-footer\"]/div/button[@type=\"button\"][@class=\"ant-btn sc-gZMcBi dMdnOw\"]")
+//	@FindBy(xpath = "//div[@class=\"ant-modal-footer\"]/div/button[@type=\"button\"][@class=\"ant-btn sc-gZMcBi dMdnOw\"]")
+//	public static WebElement SBUsavebutton;
+		
+	//xpath written by Volta
+	@FindBy(xpath = "//body//div//button[2]")
 	public static WebElement SBUsavebutton;
 
 	@FindBy(xpath = "//*[@id=\"rcDialogTitle0\"]/div/span")
