@@ -37,12 +37,15 @@ import com.invicta.qa.pages.sbu.AddSbuFunPage;
 import com.invicta.qa.pages.sbu.AddSbuUIPage;
 
 public class AddSbuUITest extends DriverIntialization {
-	
 
-	// STEP-1 ADD-SBU UI METHOD(ADD-SBU-BUTTON-ENABLED,CHECK THE CLICKABILITY, ADD-SBU-VISIBLE,
-	// ADD-SBU-FONT-COLOUR,ADD SBU-FONT- SIZE,Add SBU BUTTON FONT FAMILY,Add SBU BUTTON SPELLING
-	// Add SBU BUTTON POSITION,Add SBU BUTTON PADDING,Add SBU BUTTON SHADOW,Add SBU BACKGROUND COLOR,Add SBU BORDER COLOR
-	// Add SBU CURSER POINT,Add SBU OPACITY,Add SBU HEIGHT,Add SBU WIDTH,Add SBU FONT WEIGHT )
+	// STEP-1 ADD-SBU UI METHOD(ADD-SBU-BUTTON-ENABLED,CHECK THE CLICKABILITY,
+	// ADD-SBU-VISIBLE,
+	// ADD-SBU-FONT-COLOUR,ADD SBU-FONT- SIZE,Add SBU BUTTON FONT FAMILY,Add SBU
+	// BUTTON SPELLING
+	// Add SBU BUTTON POSITION,Add SBU BUTTON PADDING,Add SBU BUTTON SHADOW,Add SBU
+	// BACKGROUND COLOR,Add SBU BORDER COLOR
+	// Add SBU CURSER POINT,Add SBU OPACITY,Add SBU HEIGHT,Add SBU WIDTH,Add SBU
+	// FONT WEIGHT )
 	public static void addsbubutton() throws InterruptedException {
 		testCase = extent.createTest("STEP-1");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
@@ -246,7 +249,7 @@ public class AddSbuUITest extends DriverIntialization {
 			testCase.log(Status.FAIL, "No Element");
 		}
 
-		//ADD-SBU-BUTTON-POSITION
+		// ADD-SBU-BUTTON-POSITION
 
 		try {
 			Point ActulalLocation = AddSbuFunPage.SBUbutton.getLocation();
@@ -353,9 +356,8 @@ public class AddSbuUITest extends DriverIntialization {
 				testCase.log(Status.INFO, "Actualbordercolor :- " + actualbordercolor);
 				testCase.log(Status.INFO, "Expectedbordercolor :- " + Expectedbordercolor);
 				testCase.log(Status.PASS, "correct");
-			} catch (AssertionError e) 
-				
-			
+			} catch (AssertionError e)
+
 			{
 				testCase.log(Status.INFO, "Actualbordercolor :- " + actualbordercolor);
 				testCase.log(Status.INFO, "Expectedbordercolor :- " + Expectedbordercolor);
@@ -480,227 +482,226 @@ public class AddSbuUITest extends DriverIntialization {
 
 		System.out.println();
 	}
-	
+
 	// METHOD-2 -- ADD-SBU BUTTON CLICK METHOD(ADD-SBU CLICK)
-		public static void addsbuclick() throws InterruptedException {
-			testCase = extent.createTest(" METHOD-2 -- ADD-SBU BUTTON CLICK METHOD(ADD-SBU CLICK)");
-			// AddSbuFunPage AddFunPg = new AddSbuFunPage();
-			 Thread.sleep(3000);
-			//AddSbuFunPage.SBUbutton.click();
-			boolean ActualTextDisplay = AddSbuFunPage.addsbumodel.isDisplayed();
-			boolean ExpectedTestDisplay = true;
-			testCase = extent.createTest("18.ADD-SBU CLICK");
-			try {
-				Assert.assertEquals(ActualTextDisplay, ExpectedTestDisplay);
-				testCase.log(Status.INFO, "ACTUAL ADD SBU IS CLICKED :- " + ActualTextDisplay);
-				testCase.log(Status.INFO, "EXPECTED ADD SBU IS CLICKED :- " + ExpectedTestDisplay);
-				testCase.log(Status.PASS, " ADD-SBU IS CLICKED");
-			} catch (AssertionError e) {
-				testCase.log(Status.INFO, "ACTUAL ADD SBU IS CLICKED:- " + ActualTextDisplay);
-				testCase.log(Status.INFO, "EXPECTED ADD SBU IS CLICKED :- " + ExpectedTestDisplay);
-				testCase.log(Status.FAIL, " ADD-SBU IS NOT CLICKED ");
-			}
+	public static void addsbuclick() throws InterruptedException {
+		testCase = extent.createTest(" METHOD-2 -- ADD-SBU BUTTON CLICK METHOD(ADD-SBU CLICK)");
+		// AddSbuFunPage AddFunPg = new AddSbuFunPage();
+		Thread.sleep(3000);
+		// AddSbuFunPage.SBUbutton.click();
+		boolean ActualTextDisplay = AddSbuFunPage.addsbumodel.isDisplayed();
+		boolean ExpectedTestDisplay = true;
+		testCase = extent.createTest("18.ADD-SBU CLICK");
+		try {
+			Assert.assertEquals(ActualTextDisplay, ExpectedTestDisplay);
+			testCase.log(Status.INFO, "ACTUAL ADD SBU IS CLICKED :- " + ActualTextDisplay);
+			testCase.log(Status.INFO, "EXPECTED ADD SBU IS CLICKED :- " + ExpectedTestDisplay);
+			testCase.log(Status.PASS, " ADD-SBU IS CLICKED");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ACTUAL ADD SBU IS CLICKED:- " + ActualTextDisplay);
+			testCase.log(Status.INFO, "EXPECTED ADD SBU IS CLICKED :- " + ExpectedTestDisplay);
+			testCase.log(Status.FAIL, " ADD-SBU IS NOT CLICKED ");
+		}
+	}
+
+	// **************************************************************
+//STEP-3 THIS METHOD IS FOR POPUP WINDOW UI PROPERTIES(POPUP-Window-Visible,POPUP-WINDOW-POSITION,POPUP-WINDOW SIZE,POPUP-WINDOW-BORDER-COLOR
+	// POPUP-WINDOW-OVERFLOW-TYPE,POPUP-WINDOW-MARGIN,POPUP-WINDOW-CURSOR-TYPE,POPUP-WINDOW-Z-INDEX-TYPE,)
+	public static void addsbumodal() throws InterruptedException {
+		testCase = extent.createTest("STEP-3");
+		// Model Window visible
+		Thread.sleep(2000);
+
+		boolean AcctualVisible = AddSbuFunPage.addsbumodel.isDisplayed();
+		boolean ExpectedVisible = true;
+
+		testCase = extent.createTest("19-POPUP-Window-Visible");
+		try {
+			AssertJUnit.assertEquals(AcctualVisible, ExpectedVisible);
+			testCase.log(Status.INFO, "ActualElement :- " + AcctualVisible);
+			testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedVisible);
+			testCase.log(Status.INFO, "Element Available");
+			testCase.log(Status.PASS, "Correct element");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualElement :- " + AcctualVisible);
+			testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedVisible);
+			testCase.log(Status.INFO, "Element not available");
+			testCase.log(Status.FAIL, "No Element");
 		}
 
-	//**************************************************************
-//STEP-3 THIS METHOD IS FOR POPUP WINDOW UI PROPERTIES(POPUP-Window-Visible,POPUP-WINDOW-POSITION,POPUP-WINDOW SIZE,POPUP-WINDOW-BORDER-COLOR
-		//POPUP-WINDOW-OVERFLOW-TYPE,POPUP-WINDOW-MARGIN,POPUP-WINDOW-CURSOR-TYPE,POPUP-WINDOW-Z-INDEX-TYPE,)
-		public static void addsbumodal() throws InterruptedException  
-		{		
-			testCase = extent.createTest("STEP-3");
-			//Model Window visible 
-		 			Thread.sleep(2000);
-				
-					boolean AcctualVisible = AddSbuFunPage.addsbumodel.isDisplayed();
-					boolean ExpectedVisible = true;
+		Thread.sleep(2000);
 
-					testCase = extent.createTest("19-POPUP-Window-Visible");
-					try {
-						AssertJUnit.assertEquals(AcctualVisible, ExpectedVisible);
-						testCase.log(Status.INFO, "ActualElement :- " + AcctualVisible);
-						testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedVisible);
-						testCase.log(Status.INFO, "Element Available");
-						testCase.log(Status.PASS, "Correct element");
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualElement :- " + AcctualVisible);
-						testCase.log(Status.INFO, "ExpectedElement :- " + ExpectedVisible);
-						testCase.log(Status.INFO, "Element not available");
-						testCase.log(Status.FAIL, "No Element");
-					}
-					
-					Thread.sleep(2000);
+		// POPUP Window position
 
-		//POPUP Window position 
+		Point ActualLocation = AddSbuFunPage.addsbumodel.getLocation();
 
-					Point ActualLocation = AddSbuFunPage.addsbumodel.getLocation();
+		int actual_x = ActualLocation.getX();
+		int actual_y = ActualLocation.getY();
 
-					int actual_x = ActualLocation.getX();
-					int actual_y = ActualLocation.getY();
+		System.out.println("X axis: " + actual_x);
+		System.out.println("Y axis: " + actual_y);
 
-					System.out.println("X axis: " + actual_x);
-					System.out.println("Y axis: " + actual_y);
+		Point ExpectedLocation = new Point(383, 100);
 
-					Point ExpectedLocation = new Point(383, 100);
+		testCase = extent.createTest("20-POPUP-WINDOW-POSITION");
+		try {
+			AssertJUnit.assertEquals(ActualLocation, ExpectedLocation);
+			testCase.log(Status.INFO, "ActualFontSize :- " + ActualLocation);
+			testCase.log(Status.INFO, "ExpectedFontSize :- " + ExpectedLocation);
+			testCase.log(Status.PASS, "Correct Location");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualSize :- " + ActualLocation);
+			testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedLocation);
+			testCase.log(Status.FAIL, "Wrong Location");
+		}
 
-					testCase = extent.createTest("20-POPUP-WINDOW-POSITION");
-					try {
-						AssertJUnit.assertEquals(ActualLocation, ExpectedLocation);
-						testCase.log(Status.INFO, "ActualFontSize :- " + ActualLocation);
-						testCase.log(Status.INFO, "ExpectedFontSize :- " + ExpectedLocation);
-						testCase.log(Status.PASS, "Correct Location");
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualSize :- " + ActualLocation);
-						testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedLocation);
-						testCase.log(Status.FAIL, "Wrong Location");
-					}
-					
-					Thread.sleep(2000);
+		Thread.sleep(2000);
 
-		//POPUP-WINDOW SIZE
+		// POPUP-WINDOW SIZE
 
-					Dimension ActualSize = AddSbuFunPage.addsbumodel.getSize();
-					System.out.println("Size : " + ActualSize);
-					Dimension ExpectedSize = new Dimension(600, 230);
+		Dimension ActualSize = AddSbuFunPage.addsbumodel.getSize();
+		System.out.println("Size : " + ActualSize);
+		Dimension ExpectedSize = new Dimension(600, 230);
 
-					testCase = extent.createTest("21-POPUP-WINDOW-SIZE");
-					try {
-						AssertJUnit.assertEquals(ActualSize, ExpectedSize);
-						testCase.log(Status.INFO, "ActualSize :- " + ActualSize);
-						testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedSize);
-						testCase.log(Status.PASS, "Correcrt size");
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualSize :- " + ActualSize);
-						testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedSize);
-						testCase.log(Status.FAIL, "Wrong Size");
-					}
-				
-					Thread.sleep(2000);
+		testCase = extent.createTest("21-POPUP-WINDOW-SIZE");
+		try {
+			AssertJUnit.assertEquals(ActualSize, ExpectedSize);
+			testCase.log(Status.INFO, "ActualSize :- " + ActualSize);
+			testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedSize);
+			testCase.log(Status.PASS, "Correcrt size");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualSize :- " + ActualSize);
+			testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedSize);
+			testCase.log(Status.FAIL, "Wrong Size");
+		}
+
+		Thread.sleep(2000);
 
 		// POPUP-WINDOW-BACKGROUND-COLOR
 
-					String ActualButtonColor = AddSbuFunPage.addsbumodel.getCssValue("background-color");
-					System.out.println("rgb :" + ActualButtonColor);
-					String ExpectedButtonColor = "rgba(255, 255, 255, 1)";
+		String ActualButtonColor = AddSbuFunPage.addsbumodel.getCssValue("background-color");
+		System.out.println("rgb :" + ActualButtonColor);
+		String ExpectedButtonColor = "rgba(255, 255, 255, 1)";
 
-					testCase = extent.createTest("22-POPUP-WINDOW-BACKGROUND-COLOR");
-					try {
-						AssertJUnit.assertEquals(ActualButtonColor, ExpectedButtonColor);
-						testCase.log(Status.INFO, "ActualButtonColor :- " + ActualButtonColor);
-						testCase.log(Status.INFO, "ExpectedButtonColor :- " + ExpectedButtonColor);
-						testCase.log(Status.PASS, "Correct Button Color");
+		testCase = extent.createTest("22-POPUP-WINDOW-BACKGROUND-COLOR");
+		try {
+			AssertJUnit.assertEquals(ActualButtonColor, ExpectedButtonColor);
+			testCase.log(Status.INFO, "ActualButtonColor :- " + ActualButtonColor);
+			testCase.log(Status.INFO, "ExpectedButtonColor :- " + ExpectedButtonColor);
+			testCase.log(Status.PASS, "Correct Button Color");
 
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualButtonColor :- " + ActualButtonColor);
-						testCase.log(Status.INFO, "ExpectedButtonColor :- " + ExpectedButtonColor);
-						testCase.log(Status.FAIL, "Wrong Button Color");
-					}
-					
-					Thread.sleep(2000);
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualButtonColor :- " + ActualButtonColor);
+			testCase.log(Status.INFO, "ExpectedButtonColor :- " + ExpectedButtonColor);
+			testCase.log(Status.FAIL, "Wrong Button Color");
+		}
+
+		Thread.sleep(2000);
 
 		// POPUP-WINDOW-BORDER-COLOR
-					
-					String ActualBorderColor = AddSbuFunPage.addsbumodel.getCssValue("border-color");
-					System.out.println("rgb :" + ActualBorderColor);
-					String ExpectedBorderColor = "rgba(0, 0, 0, 0.85)";
 
-					testCase = extent.createTest("23-POPUP-WINDOW-BORDER-COLOR");
-					try {
-						AssertJUnit.assertEquals(ActualBorderColor, ExpectedBorderColor);
-						testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
-						testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
-						testCase.log(Status.PASS, "Correct Border Color");
+		String ActualBorderColor = AddSbuFunPage.addsbumodel.getCssValue("border-color");
+		System.out.println("rgb :" + ActualBorderColor);
+		String ExpectedBorderColor = "rgba(0, 0, 0, 0.85)";
 
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
-						testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
-						testCase.log(Status.FAIL, "Wrong Border Color");
-					}
-					
-					Thread.sleep(2000);
+		testCase = extent.createTest("23-POPUP-WINDOW-BORDER-COLOR");
+		try {
+			AssertJUnit.assertEquals(ActualBorderColor, ExpectedBorderColor);
+			testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
+			testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
+			testCase.log(Status.PASS, "Correct Border Color");
 
-		//POPUP-WINDOW-OVERFLOW-TYPE
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualBorderColor :- " + ActualBorderColor);
+			testCase.log(Status.INFO, "ExpectedBorderColor :- " + ExpectedBorderColor);
+			testCase.log(Status.FAIL, "Wrong Border Color");
+		}
 
-					String ActualOverflow = AddSbuFunPage.addsbumodel.getCssValue("overflow");
-					System.out.println("overflow :" + ActualOverflow);
-					String ExpectedOverflow = "visible";
+		Thread.sleep(2000);
 
-					testCase = extent.createTest("24-POPUP-WINDOW-OVERFLOW-TYPE");
-					try {
-						AssertJUnit.assertEquals(ActualOverflow, ExpectedOverflow);
-						testCase.log(Status.INFO, "ActualOverflow :- " + ActualOverflow);
-						testCase.log(Status.INFO, "ExpectedOverflow :- " + ExpectedOverflow);
-						testCase.log(Status.PASS, "Correct overflow");
+		// POPUP-WINDOW-OVERFLOW-TYPE
 
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualOverflow :- " + ActualOverflow);
-						testCase.log(Status.INFO, "ExpectedOverflow :- " + ExpectedOverflow);
-						testCase.log(Status.FAIL, "Wrong overflow");
-					}
-				
-					Thread.sleep(2000);
+		String ActualOverflow = AddSbuFunPage.addsbumodel.getCssValue("overflow");
+		System.out.println("overflow :" + ActualOverflow);
+		String ExpectedOverflow = "visible";
+
+		testCase = extent.createTest("24-POPUP-WINDOW-OVERFLOW-TYPE");
+		try {
+			AssertJUnit.assertEquals(ActualOverflow, ExpectedOverflow);
+			testCase.log(Status.INFO, "ActualOverflow :- " + ActualOverflow);
+			testCase.log(Status.INFO, "ExpectedOverflow :- " + ExpectedOverflow);
+			testCase.log(Status.PASS, "Correct overflow");
+
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualOverflow :- " + ActualOverflow);
+			testCase.log(Status.INFO, "ExpectedOverflow :- " + ExpectedOverflow);
+			testCase.log(Status.FAIL, "Wrong overflow");
+		}
+
+		Thread.sleep(2000);
 
 		// POPUP-WINDOW-MARGIN
 
-					String ActualMargin = AddSbuFunPage.addsbumodel.getCssValue("margin");
-					System.out.println("margin :" + ActualMargin);
-					String ExpectedMargin = "0px";
+		String ActualMargin = AddSbuFunPage.addsbumodel.getCssValue("margin");
+		System.out.println("margin :" + ActualMargin);
+		String ExpectedMargin = "0px";
 
-					testCase = extent.createTest("25-POPUP-WINDOW-MARGIN");
-					try {
-						AssertJUnit.assertEquals(ActualMargin, ExpectedMargin);
-						testCase.log(Status.INFO, "ActualMargin :- " + ActualMargin);
-						testCase.log(Status.INFO, "ExpectedMargin :- " + ExpectedMargin);
-						testCase.log(Status.PASS, "Correct Margin");
+		testCase = extent.createTest("25-POPUP-WINDOW-MARGIN");
+		try {
+			AssertJUnit.assertEquals(ActualMargin, ExpectedMargin);
+			testCase.log(Status.INFO, "ActualMargin :- " + ActualMargin);
+			testCase.log(Status.INFO, "ExpectedMargin :- " + ExpectedMargin);
+			testCase.log(Status.PASS, "Correct Margin");
 
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualMargin :- " + ActualMargin);
-						testCase.log(Status.INFO, "ExpectedMargin :- " + ExpectedMargin);
-						testCase.log(Status.FAIL, "Wrong Margin");
-					}
-					
-					Thread.sleep(2000);
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualMargin :- " + ActualMargin);
+			testCase.log(Status.INFO, "ExpectedMargin :- " + ExpectedMargin);
+			testCase.log(Status.FAIL, "Wrong Margin");
+		}
+
+		Thread.sleep(2000);
 
 		// ***** POPUP-WINDOW-CURSOR-TYPE
 
-					String ActualActions = AddSbuFunPage.addsbumodel.getCssValue("cursor");
-					System.out.println("cursor :" + ActualActions);
-					String ExpectedActions = "auto";
+		String ActualActions = AddSbuFunPage.addsbumodel.getCssValue("cursor");
+		System.out.println("cursor :" + ActualActions);
+		String ExpectedActions = "auto";
 
-					testCase = extent.createTest("26-POPUP-WINDOW-CURSOR-TYPE");
-					try {
-						AssertJUnit.assertEquals(ActualActions, ExpectedActions);
-						testCase.log(Status.INFO, "ActualFontSize :- " + ActualActions);
-						testCase.log(Status.INFO, "ExpectedFontSize :- " + ExpectedActions);
-						testCase.log(Status.PASS, "correct cursor type");
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualSize :- " + ActualActions);
-						testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedActions);
-						testCase.log(Status.FAIL, "wrong cursor type");
-					}
-					
-					Thread.sleep(2000);
+		testCase = extent.createTest("26-POPUP-WINDOW-CURSOR-TYPE");
+		try {
+			AssertJUnit.assertEquals(ActualActions, ExpectedActions);
+			testCase.log(Status.INFO, "ActualFontSize :- " + ActualActions);
+			testCase.log(Status.INFO, "ExpectedFontSize :- " + ExpectedActions);
+			testCase.log(Status.PASS, "correct cursor type");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualSize :- " + ActualActions);
+			testCase.log(Status.INFO, "ExpectedSize :- " + ExpectedActions);
+			testCase.log(Status.FAIL, "wrong cursor type");
+		}
+
+		Thread.sleep(2000);
 
 		// *****POPUP-WINDOW-Z-INDEX-TYPE
 
-					String ActualZindex = AddSbuFunPage.addsbumodel.getCssValue("z-index");
-					System.out.println("z-index :" + ActualZindex);
-					String ExpectedZindex = "auto";
+		String ActualZindex = AddSbuFunPage.addsbumodel.getCssValue("z-index");
+		System.out.println("z-index :" + ActualZindex);
+		String ExpectedZindex = "auto";
 
-					testCase = extent.createTest("27-POPUP-WINDOW-Z-INDEX-TYPE");
-					try {
-						AssertJUnit.assertEquals(ActualZindex, ExpectedZindex);
-						testCase.log(Status.INFO, "ActualZindex :- " + ActualZindex);
-						testCase.log(Status.INFO, "ExpectedZ-index :- " + ExpectedZindex);
-						testCase.log(Status.PASS, "correct z-index  type");
-					} catch (AssertionError e) {
-						testCase.log(Status.INFO, "ActualZindex :- " + ActualZindex);
-						testCase.log(Status.INFO, "ExpectedZ-index :- " + ExpectedZindex);
-						testCase.log(Status.FAIL, "wrong z-index type");
-					}
-					
-					Thread.sleep(2000);
+		testCase = extent.createTest("27-POPUP-WINDOW-Z-INDEX-TYPE");
+		try {
+			AssertJUnit.assertEquals(ActualZindex, ExpectedZindex);
+			testCase.log(Status.INFO, "ActualZindex :- " + ActualZindex);
+			testCase.log(Status.INFO, "ExpectedZ-index :- " + ExpectedZindex);
+			testCase.log(Status.PASS, "correct z-index  type");
+		} catch (AssertionError e) {
+			testCase.log(Status.INFO, "ActualZindex :- " + ActualZindex);
+			testCase.log(Status.INFO, "ExpectedZ-index :- " + ExpectedZindex);
+			testCase.log(Status.FAIL, "wrong z-index type");
 		}
-					
+
+		Thread.sleep(2000);
+	}
+
 //		//  click on outside of modal
 //					
 //					Actions action = new Actions(driver);
@@ -725,12 +726,13 @@ public class AddSbuUITest extends DriverIntialization {
 //				}
 //******************************************************************************************************************
 
-	// STEP-4 THIS METHOD IS FOR ADD-SBU TEXT(INSIDE  POPUP-WINDOW) UI PROPERTIES(ADD-SBU-TEXT-DISPLAYED,ADD-SBU-TEXT-FONT-COLOUR
+	// STEP-4 THIS METHOD IS FOR ADD-SBU TEXT(INSIDE POPUP-WINDOW) UI
+	// PROPERTIES(ADD-SBU-TEXT-DISPLAYED,ADD-SBU-TEXT-FONT-COLOUR
 	// ADD-SBU-TEXT-FONT-SIZE,ADD-SBU-TEXT-FONT-STYLE,ADD-SBU-TEXT-SPELLING,ADD-SBU-TEXT-FONT-FAMILY,ADD-SBU-TEXT-POSITION
 	// ADD-SBU-TEXT-PADDING,ADD-SUB-TEXT-SHADOW,ADD-SBU-TEXT-LETTER-SPACING,ADD-SBU-TEXT-ALIGNMENT,ADD-SBU-TEXT-TRANSFORMATION
-	// ADD-SBU-TEXT-LINE-HEIGHT,ADD-SBU-TEXT-DECORATION,ADD-SBU-TEXT-VERTICAL-ALIGNMENT,ADD-SBU-TEXT-INDENT,ADD-SBU-TEXT-ORIENTATION)	
-	// 	
-	
+	// ADD-SBU-TEXT-LINE-HEIGHT,ADD-SBU-TEXT-DECORATION,ADD-SBU-TEXT-VERTICAL-ALIGNMENT,ADD-SBU-TEXT-INDENT,ADD-SBU-TEXT-ORIENTATION)
+	//
+
 	public static void addsbutext() throws InterruptedException {
 		testCase = extent.createTest(" STEP-4");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
@@ -868,7 +870,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "wrong TitleLocation");
 				}
 
-				//ADD-SBU-TEXT-PADDING
+				// ADD-SBU-TEXT-PADDING
 
 				String Actualpadding = AddSbuFunPage.AddSBUtext.getCssValue("padding");
 
@@ -1071,7 +1073,7 @@ public class AddSbuUITest extends DriverIntialization {
 					testCase.log(Status.FAIL, "Text decoration is not as expected");
 				}
 
-				//ADD-SBU-TEXT-VERTICAL-ALIGNMENT 
+				// ADD-SBU-TEXT-VERTICAL-ALIGNMENT
 
 				String actualVerticalAlignment = AddSbuFunPage.AddSBUtext.getCssValue("vertical-align");
 				System.out.println("Actual Vertical Alignment: " + actualVerticalAlignment);
@@ -1098,7 +1100,8 @@ public class AddSbuUITest extends DriverIntialization {
 
 				}
 
-				// ADD-SBU-TEXT-INDENT(To indent is to begin text with a blank space between it and the
+				// ADD-SBU-TEXT-INDENT(To indent is to begin text with a blank space between it
+				// and the
 				// margin)
 
 				String ActualTextIndent = AddSbuFunPage.AddSBUtext.getCssValue("text-indent");
@@ -1165,12 +1168,13 @@ public class AddSbuUITest extends DriverIntialization {
 		System.out.println();
 
 	}
+
 	// STEP-6 -- THIS METHOD IS FOR ADD DATA
-		public static void sbudata(String SbuName, String SbuDescription) throws IOException, InterruptedException {
+	public static void sbudata(String SbuName, String SbuDescription) throws IOException, InterruptedException {
 //			testCase = extent.createTest("STEP-6 -- THIS METHOD IS FOR ADD DATA");
 
-			AddSbuFunPage AddSbuFunpg = new AddSbuFunPage();
-			PageFactory.initElements(driver, AddSbuFunpg);
+		AddSbuFunPage AddSbuFunpg = new AddSbuFunPage();
+		PageFactory.initElements(driver, AddSbuFunpg);
 
 //			FileInputStream file = new FileInputStream(System.getProperty(
 //					"C:\\Users\\hp\\eclipse-workspace\\QDMS-AUTOMATION\\src\\test\\java\\com\\invicta\\qa\\excel\\Data.xlsx"));
@@ -1190,19 +1194,20 @@ public class AddSbuUITest extends DriverIntialization {
 //				AddSbuFunPage.SBUdestext.sendKeys(description);
 //
 //				AddSbuFunPage.SBUsavebutton.click();
-AddSbuFunPage.SBUtext.sendKeys(SbuName);
-AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
-			}
+		AddSbuFunPage.SBUtext.sendKeys(SbuName);
+		AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
+	}
 
 //		}
 
 //*********************************************************************************************************
 
-	//STEP-7 THIS METHOD IS FOR ADD-SBU-TEXT UI PROPERTIES(SBU-TEXT-DISPLAYED,SBU-TEXT-FONT-COLOUR,SBU-TEXT-FONT-SIZE
-	//SBU-TEXT-FONT-STYLE,SBU-TEXT-SPELLING,SBU-TEXT-FONT-FAMILY,SBU-TEXT-POSITION,SBU-TEXT-PADDING,SBU-TEXT-MARGIN
+	// STEP-7 THIS METHOD IS FOR ADD-SBU-TEXT UI
+	// PROPERTIES(SBU-TEXT-DISPLAYED,SBU-TEXT-FONT-COLOUR,SBU-TEXT-FONT-SIZE
+	// SBU-TEXT-FONT-STYLE,SBU-TEXT-SPELLING,SBU-TEXT-FONT-FAMILY,SBU-TEXT-POSITION,SBU-TEXT-PADDING,SBU-TEXT-MARGIN
 	// SBU-TEXT-SHADOW,SBU-TEXT-LETTER-SPACING,SBU-TEXT-ALIGNMENT,SBU-TEXT-TRANSFORMATION,SBU-TEXT-LINE-HEIGHT,SBU-TEXT-DECORATION
-	//SBU-TEXT-VERTICAL-ALIGNMENT,SBU-TEXT-INDENT,SUB-TEXT-ORIENTATION)
-	
+	// SBU-TEXT-VERTICAL-ALIGNMENT,SBU-TEXT-INDENT,SUB-TEXT-ORIENTATION)
+
 	public static void sbutext() throws InterruptedException {
 		testCase = extent.createTest("STEP-7");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
@@ -1281,7 +1286,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "wrong font style");
 				}
 
-				//SBU-TEXT-SPELLING
+				// SBU-TEXT-SPELLING
 
 				String Actualtext = AddSbuFunPage.SBUText.getText();
 
@@ -1299,7 +1304,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "wrong font text");
 				}
 
-				//SBU-TEXT-FONT-FAMILY
+				// SBU-TEXT-FONT-FAMILY
 
 				String Actualfontfamily = AddSbuFunPage.SBUText.getCssValue("font-family");
 
@@ -1317,7 +1322,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "wrong font fontfamily");
 				}
 
-				//SBU-TEXT-POSITION
+				// SBU-TEXT-POSITION
 
 				Point ActulaTitleLocation = AddSbuFunPage.SBUText.getLocation();
 				int actual_x = ActulaTitleLocation.getX();
@@ -1340,7 +1345,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "wrong TitleLocation");
 				}
 
-				//SBU-TEXT-PADDING
+				// SBU-TEXT-PADDING
 
 				String Actualpadding = AddSbuFunPage.SBUText.getCssValue("padding");
 
@@ -1376,7 +1381,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "wrong padding");
 				}
 
-				//SBU-TEXT-SHADOW
+				// SBU-TEXT-SHADOW
 
 				String Actualshadow = AddSbuFunPage.SBUText.getCssValue("box-shadow");
 
@@ -1444,7 +1449,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "Word spacing is not as expected");
 				}
 
-				//SBU-TEXT-ALIGNMENT (CENTER/LEFT/RIGHT)
+				// SBU-TEXT-ALIGNMENT (CENTER/LEFT/RIGHT)
 
 				String ActualAlignment = AddSbuFunPage.SBUText.getCssValue("text-align");
 				System.out.println("Text Alignment :" + ActualAlignment);
@@ -1493,7 +1498,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "Transformation unexpected");
 				}
 
-				//SBU-TEXT-LINE-HEIGHT
+				// SBU-TEXT-LINE-HEIGHT
 
 				String ActualLineHeight = AddSbuFunPage.SBUText.getCssValue("line-height");
 				System.out.println("Line Height :" + ActualLineHeight);
@@ -1518,7 +1523,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 					testCase.log(Status.FAIL, "Line height is not as expected");
 				}
 
-				//SBU-TEXT-DECORATION
+				// SBU-TEXT-DECORATION
 
 				String ActualTextDecoration = AddSbuFunPage.SBUText.getCssValue("text-decoration");
 				System.out.println("Text Decoration :" + ActualTextDecoration);
@@ -1570,7 +1575,8 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 
 				}
 
-				// SBU-TEXT-INDENT (To indent is to begin text with a blank space between it and the
+				// SBU-TEXT-INDENT (To indent is to begin text with a blank space between it and
+				// the
 				// margin)
 
 				String ActualTextIndent = AddSbuFunPage.SBUText.getCssValue("text-indent");
@@ -1638,11 +1644,12 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 
 	}
 //***************************************************************************************
-	//STEP-8 THIS METHOD IS FOR DESCRIPTION TEXT UI PROPERTIES((SBU-DESCRIPTION-DISPLAYED,SBU-DESCRIPTION-FONT-COLOUR,SBU-DESCRIPTION-FONT-SIZE
-	//SBU-DESCRIPTION-FONT-STYLE,SBU-DESCRIPTION-SPELLING,SBU-DESCRIPTION-FONT-FAMILY,SBU-DESCRIPTION-POSITION,SBU-DESCRIPTION-PADDING,SBU-DESCRIPTION-MARGIN
+	// STEP-8 THIS METHOD IS FOR DESCRIPTION TEXT UI
+	// PROPERTIES((SBU-DESCRIPTION-DISPLAYED,SBU-DESCRIPTION-FONT-COLOUR,SBU-DESCRIPTION-FONT-SIZE
+	// SBU-DESCRIPTION-FONT-STYLE,SBU-DESCRIPTION-SPELLING,SBU-DESCRIPTION-FONT-FAMILY,SBU-DESCRIPTION-POSITION,SBU-DESCRIPTION-PADDING,SBU-DESCRIPTION-MARGIN
 	// SBU-DESCRIPTION-SHADOW,SBU-DESCRIPTION-LETTER-SPACING,SBU-DESCRIPTION-ALIGNMENT,SBU-DESCRIPTION-TRANSFORMATION,SBU-DESCRIPTION-LINE-HEIGHT,SBU-DESCRIPTION-DECORATION
-	//SBU-DESCRIPTION-VERTICAL-ALIGNMENT,SBU-DESCRIPTION-INDENT,SUB-DESCRIPTION-ORIENTATION)) 
-	
+	// SBU-DESCRIPTION-VERTICAL-ALIGNMENT,SBU-DESCRIPTION-INDENT,SUB-DESCRIPTION-ORIENTATION))
+
 	public static void description() throws InterruptedException {
 		AddSbuFunPage sbuui = new AddSbuFunPage();
 		PageFactory.initElements(driver, sbuui);
@@ -2077,9 +2084,10 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 
 	}
 
-	//STEP-5  THIS METHOD IS FOR TEXTBOX  UI PROPERTIES(SBU-TEXTBOX-DISPLAYED,.SBU-TEXTBOX-ENABLED,SBU-TEXTBOX-POSITION
+	// STEP-5 THIS METHOD IS FOR TEXTBOX UI
+	// PROPERTIES(SBU-TEXTBOX-DISPLAYED,.SBU-TEXTBOX-ENABLED,SBU-TEXTBOX-POSITION
 	// SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-BACKGROUND-COLOUR,SBU-TEXTBOX-FONT-COLOUR,SBU-TEXTBOX-FONT-SIZE,SBU-TEXTBOX-BORDER-COLOUR,SBU-TEXTBOX-SIZE)
-	
+
 	public static void sbutextbox() throws InterruptedException {
 		testCase = extent.createTest("STEP-5");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
@@ -2161,7 +2169,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 							testCase.log(Status.FAIL, "wrong bg colur");
 						}
 
-						//SBU-TEXTBOX-FONT-COLOUR
+						// SBU-TEXTBOX-FONT-COLOUR
 
 						String Actualtextcolor = AddSbuFunPage.SBUtextbox.getCssValue("font-color");
 
@@ -2282,10 +2290,11 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 		System.out.println();
 	}
 
-	//STEP-7 THIS METHOD IS FOR DESCRIPTION TEXT BOX UI PROPERTIES(DESCRIPTION-TEXTBOX-DISPLAYED,DESCRIPTION-TEXTBOX-ENABLED,DESCRIPTION-TEXTBOX-POSITION
+	// STEP-7 THIS METHOD IS FOR DESCRIPTION TEXT BOX UI
+	// PROPERTIES(DESCRIPTION-TEXTBOX-DISPLAYED,DESCRIPTION-TEXTBOX-ENABLED,DESCRIPTION-TEXTBOX-POSITION
 	// DESCRIPTION-TEXTBOX-POSITION,DESCRIPTION-TEXTBOX-BACKGROUND-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR,DESCRIPTION-TEXTBOX-FONT-COLOUR
-	//DESCRIPTION-TEXTBOX-FONT-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE)
-	
+	// DESCRIPTION-TEXTBOX-FONT-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE,DESCRIPTION-TEXTBOX-FONT-STYLE,DESCRIPTION-TEXTBOX-SIZE)
+
 	public static void descriptiontextbox() throws InterruptedException {
 		testCase = extent.createTest("STEP-7");
 		AddSbuFunPage sbuui = new AddSbuFunPage();
@@ -2487,6 +2496,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 		}
 		System.out.println();
 	}
+
 //	STEP-9  THIS METHOD IS FOR SAVE BUTTON PROPERTIES(ELEMENT-VISIBILITY,BUTTON-POSITION,FONT-SIZE,BUTTON-SIZE
 // BUTTON-ENABLE,BUTTON-COLOR,BORDER-COLOR,FONT-TYPE,SAVE-BUTTON-FONT-COLOUR,BORDER-COLOR,FONT-TYPE
 // SAVE-BUTTON-FONT-COLOUR,SAVE-BUTTON-CURSOR,SAVE BUTTON SPELLING,SAVE-BUTTON-PADDING,SAVE-BUTTON-RADIUS
@@ -2685,8 +2695,8 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 		System.out.println("Font type: " + ActualFontType);
 
 		String ExpectedFontType = "";
-		
-		//input[@id='sub_business_unit']
+
+		// input[@id='sub_business_unit']
 
 		boolean fonttype = true;
 		testCase = extent.createTest("109.FONT-TYPE");
@@ -2881,7 +2891,7 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 		}
 		Thread.sleep(2000);
 	}
-	
+
 	// STEP-10 --THIS METHOD IS FOR SAVE BUTTON FUNCTION
 
 	public static void clicksave() throws InterruptedException {
@@ -2892,41 +2902,42 @@ AddSbuFunPage.SBUdestext.sendKeys(SbuDescription);
 		AddSbuFunPage.SBUsavebutton.click();
 	}
 
-	//STEP-11 -- CHECK THE LAST ADD SBU VALUE(LAST-ADDED-DATA)
-	public static  void checkLastAddvalue() throws InterruptedException, IOException {
-        AddSbuFunPage addfunctionpg = new AddSbuFunPage();
+	// STEP-11 -- CHECK THE LAST ADD SBU VALUE(LAST-ADDED-DATA)
+	public static void checkLastAddvalue() throws InterruptedException, IOException {
+		AddSbuFunPage addfunctionpg = new AddSbuFunPage();
 		PageFactory.initElements(driver, addfunctionpg);
-        
-        Thread.sleep(2000);
-        //WebElement tableRow = driver.findElement(By.xpath("//*[@id=\\\"root\\\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[2]"));
-        String actualdata = AddSbuFunPage.tableRow.getText();
-        System.out.println("First row of table : " + actualdata);
-        
-        String expecteddata ="testing";
-        try {
-        boolean firstdata = true;
-        testCase = extent.createTest("117.LAST-ADDED-DATA");
-        try {
-            AssertJUnit.assertEquals(actualdata, expecteddata);
-        } catch (AssertionError e) {
-            firstdata = false;
-        }
-        if (firstdata) {
-            testCase.log(Status.INFO, "Actual Data :- " + actualdata);
-            testCase.log(Status.INFO, "Expected Data :- " + expecteddata);
+
+		Thread.sleep(2000);
+		// WebElement tableRow =
+		// driver.findElement(By.xpath("//*[@id=\\\"root\\\"]/div/section/section/main/div/div/div[2]/div/div/div/div/div/div[2]/div[2]/table/tbody/tr[2]"));
+		String actualdata = AddSbuFunPage.tableRow.getText();
+		System.out.println("First row of table : " + actualdata);
+
+		String expecteddata = "testing";
+		try {
+			boolean firstdata = true;
+			testCase = extent.createTest("117.LAST-ADDED-DATA");
+			try {
+				AssertJUnit.assertEquals(actualdata, expecteddata);
+			} catch (AssertionError e) {
+				firstdata = false;
+			}
+			if (firstdata) {
+				testCase.log(Status.INFO, "Actual Data :- " + actualdata);
+				testCase.log(Status.INFO, "Expected Data :- " + expecteddata);
 //            testCase.log(Status.INFO, "").assignCategory("High Severity");
 //            testCase.log(Status.INFO, "").assignCategory("High Priority");
-            testCase.log(Status.PASS, "Correct last added data");
-        } else {
-            testCase.log(Status.INFO, "Actual Data :- " + actualdata);
-            testCase.log(Status.INFO, "Expected Data :- " + expecteddata);
+				testCase.log(Status.PASS, "Correct last added data");
+			} else {
+				testCase.log(Status.INFO, "Actual Data :- " + actualdata);
+				testCase.log(Status.INFO, "Expected Data :- " + expecteddata);
 //            testCase.log(Status.INFO, "").assignCategory("High Severity");
 //            testCase.log(Status.INFO, "").assignCategory("High Priority");
-            testCase.log(Status.FAIL, "Wrong last added data");
-        }
-        }catch (Exception e) {
-        	testCase.log(Status.FAIL, "Wrong last added data");
+				testCase.log(Status.FAIL, "Wrong last added data");
+			}
+		} catch (Exception e) {
+			testCase.log(Status.FAIL, "Wrong last added data");
 		}
-    }
+	}
 
 }
